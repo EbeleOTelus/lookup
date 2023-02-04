@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(141, 52, 52);
 }
 
 .App-link {
@@ -34,5 +34,19 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+.App{
+  min-height: 100vw;
+  background-image: linear-gradient(to right, rgb(6, 5, 5) , rgb(62, 62, 60));
+  color: rgb(252, 243, 243);
+  padding-top: 130px;
+  padding-bottom: 70px;
+}
+
+@media (max-width: 700px) {
+  .App {
+    padding-top: 70px;
   }
 }

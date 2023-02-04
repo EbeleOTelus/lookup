@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from "./Components/Header/Header";
-// import './App.css';
+import './App.css';
  import NavBar from './Components/NavBar/NavBar';
 import { Container } from '@mui/system';
 import Trending from './Components/Trending/Trending';
