@@ -1,3 +1,23 @@
-.Header {
+.Header{
+  width: 100%;
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
+  background-color:rgb(3, 3, 3);
+  font-family: Montserrat,sans-serif;
+  font-size: 5vw;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: black;
+  color: white;
+  z-index: 100;
+  }
   
-}
+  @media (max-width: 700px) {
+    .Header {
+      padding-top: 15px;
+      font-size: 6.4vw;
+    }
+  }
