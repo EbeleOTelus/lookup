@@ -21,11 +21,11 @@ export default function SimpleBottomNavigation() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-        <BottomNavigationAction label="Trending" icon={<WhatshotIcon />} />
-        <BottomNavigationAction label="Movies" icon={<MovieIcon />} />
-        <BottomNavigationAction label="Tv Series" icon={<TvIcon />} />
-        <BottomNavigationAction label="Search" icon={<SearchIcon />} />
+        <BottomNavigationAction style={{ color: "white", background: "black"  }} label="Home" icon={<HomeIcon />} />
+        <BottomNavigationAction style={{ color: "white", background: "black"  }} label="Trending" icon={<WhatshotIcon />} />
+        <BottomNavigationAction style={{ color: "white", background: "black"  }} label="Movies" icon={<MovieIcon />} />
+        <BottomNavigationAction style={{ color: "white", background: "black"  }} label="Tv Series" icon={<TvIcon />} />
+        <BottomNavigationAction style={{ color: "white", background: "black"  }}  label="Search" icon={<SearchIcon />} />
       </BottomNavigation>
    
   );
