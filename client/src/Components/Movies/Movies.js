@@ -43,7 +43,7 @@ const Movies = () => {
       <span className='pageTitle'>Trending</span>
       <div className="trending">
         {content && content.map((c) => 
-        <TrendingContent 
+        <TrendingContent className="movieItems"
           key={c.id} 
           id={c.id} 
           poster={c.poster_path}

@@ -1,4 +1,4 @@
-/* .trending:hover {
-  background-color: aquamarine;
-  color: rgb(45, 45, 73)
-} */
+.movieItems:hover {
+  background-color:rgb(84, 84, 242);
+  color: black;
+}
