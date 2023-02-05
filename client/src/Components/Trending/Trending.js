@@ -9,7 +9,7 @@ const Trending = () => {
 
   
   // console.log("options>>>>>>", options)
-  const fetchTrending = async () => {
+  const fetchPopular = async () => {
     return axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}`)
     .then(({ data }) => {
       console.log("data>>>>>", data.results)
@@ -23,7 +23,7 @@ const Trending = () => {
   };
 
   useEffect(() => {
-    fetchTrending().then((content) => {
+    fetchPopular().then((content) => {
     setContent(content.results);
   });
   }, []);
