@@ -7,6 +7,7 @@ const Header = () => {
    <div className="Header-box">
     <span onClick={() => window.scroll(0, 0)} className="Header">
       TvHaven</span>
+      <span></span>
       </div>
   )
 }

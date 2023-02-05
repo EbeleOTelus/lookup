@@ -13,13 +13,13 @@
 
 }
 
-.media:hover {
+.popular:hover {
   background-color:rgb(84, 84, 242);
   color: black;
 }
 
 @media (max-width: 550px) {
-  .media {
+  .popular {
     width: 50%;
   }
 }
