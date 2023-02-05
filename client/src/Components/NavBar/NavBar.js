@@ -44,7 +44,7 @@ else if (value === 4){
         <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Home" icon={<HomeIcon />} />
         <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Most Popular" icon={<WhatshotIcon />} />
         <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Movies" icon={<MovieIcon />} />
-        <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Tv Series" icon={<TvIcon />} />
+        <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Tv Shows" icon={<TvIcon />} />
         <BottomNavigationAction style={{ color: "beige", background: "black"  }}  label="Search" icon={<SearchIcon />} />
       </BottomNavigation>
    
