@@ -30,7 +30,7 @@ const Movies = () => {
 
   return (
     <div>
-      <span className='pageTitle'>Movies</span>
+      <span className='pageTitle'></span>
       <Genres 
         type='movie'
         selectedGenres={selectedGenres}
@@ -43,7 +43,7 @@ const Movies = () => {
       <span className='pageTitle'>Trending</span>
       <div className="trending">
         {content && content.map((c) => 
-        <TrendingContent 
+        <TrendingContent className="movieItems"
           key={c.id} 
           id={c.id} 
           poster={c.poster_path}
