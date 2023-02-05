@@ -1,7 +1,6 @@
 .trending {
-  min-height: 100vw;
-  background-image: linear-gradient(to right, rgb(54, 44, 54) , rgb(230, 183, 222));
-  color: rgb(252, 243, 243);
-  padding-top: 130px;
-  padding-bottom: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
 }
