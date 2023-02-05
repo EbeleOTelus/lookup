@@ -4,8 +4,10 @@ import "./Header.css"
 
 const Header = () => {
   return (
+   <div className="Header-box">
     <span onClick={() => window.scroll(0, 0)} className="Header">
-      FlickPick</span>
+      TvHaven</span>
+      </div>
   )
 }
 

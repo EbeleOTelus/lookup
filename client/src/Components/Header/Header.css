@@ -1,4 +1,4 @@
-.Header{
+.Header-box{
   width: 100%;
   cursor: pointer;
   position: fixed;
@@ -13,6 +13,17 @@
   box-shadow: black;
   color: beige;
   z-index: 100;
+  
+  }
+
+  .Header{
+    font-size: 80px;
+	 font-weight: 700; 
+	background-clip: text; 
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: url('https://image.tmdb.org/t/p/w300//t79ozwWnwekO0ADIzsFP1E5SkvR.jpg'); 
+
   }
   
   @media (max-width: 700px) {
