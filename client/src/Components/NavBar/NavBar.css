@@ -8,3 +8,9 @@
   z-index: 50;
 
 }
+
+.Mui-selected {
+  background-color: aquamarine;
+  color: black;
+  border: none;
+}

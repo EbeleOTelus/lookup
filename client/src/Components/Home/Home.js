@@ -36,9 +36,9 @@ const Home = (props) => {
     }
     while (tempArr.length < imgs.length);
 
-    console.log("random numbers tempArr>>>", tempArr);
-    console.log("imgs>>>", imgs);
-    console.log("imgs[0]>>>", `https://image.tmdb.org/t/p/w300${imgs[tempArr[0]].poster_path}`);
+    // console.log("random numbers tempArr>>>", tempArr);
+    // console.log("imgs>>>", imgs);
+    // console.log("imgs[0]>>>", `https://image.tmdb.org/t/p/w300${imgs[tempArr[0]].poster_path}`);
 
 
     // Create a random non-repeating array from the downloaded images
@@ -48,7 +48,7 @@ const Home = (props) => {
       for (let i = 0; i < imgs.length; i++) {
         imgArr.push(`https://image.tmdb.org/t/p/w300${imgs[tempArr[i]].poster_path}`);
       }
-      console.log("imgArr", imgArr);
+      // console.log("imgArr", imgArr);
     }
   }
 
