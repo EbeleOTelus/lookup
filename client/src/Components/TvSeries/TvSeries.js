@@ -4,7 +4,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Genres from "../Page/Genres";
 import Page from "../Page/Page";
-import TrendingContent from "../TrendingContent/TrendingContent";
+
+import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
 // const axios = require("axios");
 
 const TvSeries = () => {
@@ -14,7 +15,7 @@ const TvSeries = () => {
   const [numberOfPages, setNumOfPages] = useState();
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
-
+  let tvSeriesData = [];
 
   // https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability
 
@@ -35,30 +36,43 @@ const TvSeries = () => {
       'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
     }
   };
-
-  const fetchTvSeries = () => {
-    axios.request(options).then(function(response) {
-      console.log(response);
-    })
-      .then(data => {
-        setContent(data);
-      })
-
-      .catch(function(error) {
-        console.error(error);
-      });
-
-
-  };
-
+  
   useEffect(() => {
+    const fetchTvSeries = () => {
+      axios.request(options).then(function(response) {
+        console.log("HI",response.data.results);
+        setContent(response.data.results);
+      })
+      .catch(function(error) {
+          console.error(error);
+      });
+    };
     fetchTvSeries();
   }, []);
 
-  console.log('flagggg', content)
-  // const item = c.results 
+  if(content.length > 0){
+    console.log("we are in the if condition")
+      tvSeriesData = content.map((c, id) => (
+        <TvSeriesContent
+        key={id}
+          age={c.age}
+          cast={c.cast}
+         countries={c.countries}
+         genre={c.genre}
+        imdbID={c.imdbID}
+         overview={c.overview}
+      posterURLs={c.posterURLs[342]}
+         streamingInfo={c.streamingInfo}
+        title={c.title}
+        year={c.year} 
+        video={c.video}
+      imdbRating={c.imdbRating}/>
+        
+    ));
+  }
   return (
     <div>
+      {tvSeriesData}
       
     </div>
   );

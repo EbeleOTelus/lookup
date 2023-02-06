@@ -9,7 +9,8 @@ const TrendingContent = ({
   title,
   date,
   media_type,
-  vote_average,
+  vote_average
+  
 }) => {
  
   return (

@@ -35,7 +35,7 @@ else if (value === 4){
     
       <BottomNavigation
         showLabels
-        class="bottom-nav"
+        className="bottom-nav"
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
