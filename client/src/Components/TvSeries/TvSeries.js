@@ -6,7 +6,7 @@ import Genres from "../Page/Genres";
 import Page from "../Page/Page";
 
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
-// const axios = require("axios");
+import "./TvSeries.css"
 
 const TvSeries = () => {
 
@@ -51,7 +51,7 @@ const TvSeries = () => {
   }, []);
 
   if(content.length > 0){
-    console.log("we are in the if condition")
+    
       tvSeriesData = content.map((c, id) => (
         <TvSeriesContent
         key={id}
@@ -71,7 +71,7 @@ const TvSeries = () => {
     ));
   }
   return (
-    <div>
+    <div className="trending">
       {tvSeriesData}
       
     </div>
