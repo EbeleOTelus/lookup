@@ -1,7 +1,7 @@
 import React from 'react';
 import { img_300, unavaliable } from "./../images/images.js";
 import "./TvSeriesContent.css"
-
+import Genres from '../Page/Genres.js';
 
 const TvSeriesContent = ({
   id,
@@ -20,7 +20,9 @@ const TvSeriesContent = ({
  
   return (
     <div className="popular">
+      <Genres 
       
+      />
       <img className="poster"
         src={posterURLs} alt={title} />
       <b className="title">{title}</b>

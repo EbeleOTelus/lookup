@@ -1,6 +1,7 @@
 import React from 'react'
 import { createTheme, Pagination, ThemeProvider } from '@mui/material'
 
+
 const darkTheme=createTheme({
   palletee: {
     type: "dark",

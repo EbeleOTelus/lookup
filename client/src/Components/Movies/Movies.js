@@ -9,8 +9,8 @@ import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
 const Movies = () => {
 
   const [page, setPage] = useState(1);
-  const [content, setContent] = useState([]);
   const [numberOfPages, setNumOfPages] = useState();
+  const [content, setContent] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
   let tvMoviesData = [];
@@ -38,27 +38,20 @@ const Movies = () => {
     }
   };
 
-
-
-
-
-
-
-
-
-
   useEffect(() => {
     const fetchMovies = () => {
       axios.request(options).then(function(response) {
-        console.log("HI",response.data.results);
+        console.log("HI", response.data.results);
         setContent(response.data.results);
+        setNumOfPages(response.data.total_pages);
+        console.log("response.data.total_pages", response.data.total_pages);
       })
-      .catch(function(error) {
+        .catch(function(error) {
           console.error(error);
-      });
+        });
     };
     fetchMovies();
-  }, []);
+  }, [page]);
 
   if (content.length > 0) {
 
@@ -76,20 +69,25 @@ const Movies = () => {
         title={c.title}
         year={c.year}
         video={c.video}
-        imdbRating={c.imdbRating} />
+        imdbRating={c.imdbRating}
+        setPage={setPage} />
 
     ));
   }
 
   return (
 
-    
+    <div>
+      <div className="trending" >
+        {tvMoviesData}
 
-    <div className="trending" >
-      {tvMoviesData}
-          
-        </div >
-  
+      </div >
+      {numberOfPages>1 && (
+      <Page setPage={setPage} numberOfPages={numberOfPages}/>
+      )}
+
+    </div>
+
   );
 
 };

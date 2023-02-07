@@ -13,8 +13,8 @@ const TvSeries = () => {
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
   const [numberOfPages, setNumOfPages] = useState();
-  const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
+  const [selectedGenres, setSelectedGenres] = useState([]);
   let tvSeriesData = [];
 
   // https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability
@@ -47,6 +47,7 @@ const TvSeries = () => {
       axios.request(options).then(function(response) {
         console.log("HI",response.data.results);
         setContent(response.data.results);
+        setNumOfPages(response.data.total_pages)
       })
       .catch(function(error) {
           console.error(error);
@@ -80,6 +81,13 @@ const TvSeries = () => {
     
     <div className="trending">
       {tvSeriesData}
+      <Genres 
+        genres={genres}
+        setGenres={setGenres}
+        selectedGenres={selectedGenres}
+        setSelectedGenres={setSelectedGenres}
+        page={page}
+      />
       
     </div>
     
