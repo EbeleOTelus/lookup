@@ -26,7 +26,7 @@ export default function App() {
         <Route path='/trending' element={<Trending/>} exact/>
         <Route path='/movies' element={<Movies/>} />
         <Route path='/tvseries' element={<TvSeries/>} />
-        <Route path='/search' element={<Search/>} />
+        
        </Routes>
 
         
