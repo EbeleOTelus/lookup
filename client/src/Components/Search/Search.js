@@ -9,6 +9,11 @@ const Search = () => {
   const [container, setContainer] = useState([]);
   const [finalPoint, setfinalPoint] = useState('');
 
+
+  useEffect(() => {
+    fetchSearchData();
+  }, [endPoint]);
+
   const fetchSearchData = () => {
 
 
@@ -18,10 +23,15 @@ const Search = () => {
       params: {
         country: 'ca',
         services: 'prime,netflix,disney,hbo,paramount,starz,showtime,apple',
-        type: 'movie',
+        type: 'series',
         order_by: 'imdb_vote_count',
+        year_min: '1990',
         desc: 'true',
         language: 'en',
+        min_imdb_rating: '60',
+        max_imdb_rating: '100',
+        min_imdb_vote_count: '10000',
+        keyword: `${endPoint}`,
         output_language: 'en'
       },
       headers: {
@@ -32,25 +42,22 @@ const Search = () => {
 
     axios.request(options)
       .then(function(response) {
-      console.log(response.data.results);
-      setContainer(response.data.results)
-      console.log("container", container)
-    })
-    .catch(function(error) {
-      console.error(error);
-    });
-    
-    
+        console.log(response.data.results);
+        setContainer(response.data.results);
+
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+
   };
 
-  useEffect(() => {
-    fetchSearchData();
-  }, [finalPoint]);
+  
 
-  const onChangeHandler = (element) => { setEndPoint(element.target.value); };
+  const onChangeHandler = (e) => { setEndPoint(e.target.value); };
 
-  const submitHandler = (element) => {
-    element.preventDefault();
+  const submitHandler = (e) => {
+    e.preventDefault();
     setfinalPoint(endPoint);
   };
 
@@ -58,18 +65,18 @@ const Search = () => {
     <div className="Search">
 
       <form onSubmit={submitHandler}>
-        
+
         <input type="text" value={endPoint} onChange={onChangeHandler} />
         <button type='submit'>Submit</button>
-        
+
       </form>
       {container && container.map((item, index) => {
         return (
           <div key={index}>
 
-            <p>{item.originalTitle}</p>
+            <p>{endPoint ? item.originalTitle : ???}</p>
           </div>
-        )
+        );
       })}
 
     </div>
