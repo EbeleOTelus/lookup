@@ -4,7 +4,10 @@
   position: fixed;
   display: flex;
   justify-content: flex-start;
-  background-color:rgb(3, 3, 3);
+  /* background-color:rgb(124, 91, 124); */
+  background-image: linear-gradient(to left, rgb(3, 0, 10) , rgb(7, 23, 76)); 
+  /* url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3Egcucq3AyZzs4faepE4mn9rUPBFfAN_iMg&usqp=CAU'); */
+  
   font-family: Montserrat,sans-serif;
   font-size: 5vw;
   padding-left: 15px;
@@ -22,7 +25,7 @@
 	background-clip: text; 
 	-webkit-background-clip: text;
 	color: transparent;
-	background-image: url('https://image.tmdb.org/t/p/w300//t79ozwWnwekO0ADIzsFP1E5SkvR.jpg'); 
+	background-image: url('https://media.discordapp.net/attachments/1066074891230650448/1072329717920845834/abominable-printables-eyes3.jpg'); 
 
   }
   

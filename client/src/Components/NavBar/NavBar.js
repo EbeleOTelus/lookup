@@ -26,16 +26,14 @@ else if (value === 2){
 else if (value === 3){
   navigate("/tvseries")
 }
-else if (value === 4){
-  navigate("/search")
-}
+
   }, [value, navigate]) 
 
   return (
     
       <BottomNavigation
         showLabels
-        className="bottom-nav"
+        class="bottom-nav"
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
@@ -45,7 +43,7 @@ else if (value === 4){
         <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Most Popular" icon={<WhatshotIcon />} />
         <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Movies" icon={<MovieIcon />} />
         <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Tv Shows" icon={<TvIcon />} />
-        <BottomNavigationAction style={{ color: "beige", background: "black"  }}  label="Search" icon={<SearchIcon />} />
+        
       </BottomNavigation>
    
   );

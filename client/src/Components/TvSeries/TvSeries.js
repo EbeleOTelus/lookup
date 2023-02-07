@@ -21,15 +21,20 @@ const TvSeries = () => {
 
   const options = {
     method: 'GET',
-    url: 'https://streaming-availability.p.rapidapi.com/search/basic',
+    url: 'https://streaming-availability.p.rapidapi.com/search/ultra',
     params: {
       country: 'ca',
-      service: 'netflix',
-      type: 'movie',
-      genre: '18',
+      services: 'prime,netflix,disney,hbo,paramount,starz,showtime,apple',
+      type: 'series',
+      order_by: 'imdb_vote_count',
+      year_min: '2000',
+      year_max: '2020',
       page: '1',
-      output_language: 'en',
-      language: 'en'
+      desc: 'true',
+      language: 'en',
+      min_imdb_rating: '70',
+      min_imdb_vote_count: '10000',
+      output_language: 'en'
     },
     headers: {
       'X-RapidAPI-Key': '5aac6a45f7mshd86f9fdd63ba4c6p18cb0bjsn84842e7256c9',
@@ -71,10 +76,13 @@ const TvSeries = () => {
     ));
   }
   return (
+    
+    
     <div className="trending">
       {tvSeriesData}
       
     </div>
+    
   );
 
 };
