@@ -3,20 +3,17 @@
   cursor: pointer;
   position: fixed;
   display: flex;
-  justify-content: flex-start;
-  /* background-color:rgb(124, 91, 124); */
-  background-image: linear-gradient(to left, rgb(3, 0, 10) , rgb(7, 23, 76)); 
-  /* url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3Egcucq3AyZzs4faepE4mn9rUPBFfAN_iMg&usqp=CAU'); */
-  
+  justify-content: space-between;
+  background-image: linear-gradient(to left, rgb(3, 0, 10) , rgb(7, 23, 76));
   font-family: Montserrat,sans-serif;
   font-size: 5vw;
-  padding-left: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  
   box-shadow: black;
   color: beige;
   z-index: 100;
-  
+  padding: 15px;
+  align-items: center;
+
   }
 
   .Header{
