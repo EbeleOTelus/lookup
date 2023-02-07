@@ -1,56 +1,79 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react';
 import { NavItem } from 'react-bootstrap';
 import "./Search.css";
+import axios from "axios";
 
 const Search = () => {
 
-  const [endPoint, setEndPoint] = useState('')
-  const [container, setContainer] = useState([])
-  const [searchPhrase, setSearchPhrase] = useState('')
+  const [endPoint, setEndPoint] = useState('');
+  const [container, setContainer] = useState([]);
+  const [finalPoint, setfinalPoint] = useState('');
 
   const fetchSearchData = () => {
+
+
     const options = {
       method: 'GET',
+      url: 'https://streaming-availability.p.rapidapi.com/search/ultra',
+      params: {
+        country: 'ca',
+        services: 'prime,netflix,disney,hbo,paramount,starz,showtime,apple',
+        type: 'movie',
+        order_by: 'imdb_vote_count',
+        desc: 'true',
+        language: 'en',
+        output_language: 'en'
+      },
       headers: {
         'X-RapidAPI-Key': '5aac6a45f7mshd86f9fdd63ba4c6p18cb0bjsn84842e7256c9',
         'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
       }
     };
+
+    axios.request(options)
+      .then(function(response) {
+      console.log(response.data.results);
+      setContainer(response.data.results)
+      console.log("container", container)
+    })
+    .catch(function(error) {
+      console.error(error);
+    });
     
-    fetch('https://streaming-availability.p.rapidapi.com/search/ultra?country=ca&services=netflix%2Cprime%2Cdisney%2Chbo%2Chulu%2Cpeacock%2Cparamount%2Cstarz%2Cshowtime%2Capple%2Cmubi&type=movie&order_by=imdb_vote_count&year_min=2000&genres_relation=or&desc=true&language=en&min_imdb_rating=70&min_imdb_vote_count=10000&max_imdb_vote_count=1000000&output_language=en', options)
-      .then(response => response.json())
-      .then(data => setContainer(data))
-      .catch(err => console.error(err));
-  }
+    
+  };
 
   useEffect(() => {
-    fetchSearchData()
-  }, [searchPhrase])
+    fetchSearchData();
+  }, [finalPoint]);
 
-  const onChangeHandler = (element) => {setEndPoint(element.target.value)}
+  const onChangeHandler = (element) => { setEndPoint(element.target.value); };
 
   const submitHandler = (element) => {
-    element.preventDefault()
-    setSearchPhrase(endPoint)
-  }
+    element.preventDefault();
+    setfinalPoint(endPoint);
+  };
 
   return (
     <div className="Search">
-      <form onSubmit={submitHandler} className="search-form">
-        <input type="text" className="search-input" value={endPoint} onChange={onChangeHandler}/>
-        <button type='submit' className="search-button">Submit</button>
+
+      <form onSubmit={submitHandler}>
+        
+        <input type="text" value={endPoint} onChange={onChangeHandler} />
+        <button type='submit'>Submit</button>
+        
       </form>
-      {/* {container.map((element) => {
+      {container && container.map((item, index) => {
         return (
-          <div>
-            <img src={element} alt="" />
-            <p>{element}</p>
+          <div key={index}>
+
+            <p>{item.originalTitle}</p>
           </div>
         )
-      })} */}
-    
-    </div>
-  )
-}
+      })}
 
-export default Search
+    </div>
+  );
+};
+
+export default Search;
