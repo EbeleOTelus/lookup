@@ -17,6 +17,7 @@ const TvSeriesContent = ({
   year,
   imdbRating
 }) => {
+  
  
   return (
     <div className="popular">
