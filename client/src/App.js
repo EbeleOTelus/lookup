@@ -10,7 +10,6 @@ import Search from './Components/Search/Search';
 import Home from './Components/Home/Home';
 import SideBar from './Components/NavBar/SideBar';
 
-
 export default function App() {
   
   return (

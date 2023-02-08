@@ -16,6 +16,7 @@
 
   }
 
+  
   .Header{
     font-size: 80px;
 	 font-weight: 700; 
@@ -26,6 +27,12 @@
 
   }
   
+  .loginClass{
+    padding-top: 20px;
+    font-size: 35px;
+  
+
+  }
   @media (max-width: 700px) {
     .Header {
       padding-top: 15px;
