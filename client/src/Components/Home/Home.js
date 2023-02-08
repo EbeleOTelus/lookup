@@ -61,8 +61,8 @@ const Home = (props) => {
 
     return (
 
-      <>
-      <Signup />
+      
+      
       
       <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
         <div className="carousel-inner">
@@ -141,7 +141,7 @@ const Home = (props) => {
         </a>
       </div>
       
-</>
+
     );
 
 };
