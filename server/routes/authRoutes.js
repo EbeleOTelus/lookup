@@ -27,3 +27,4 @@ module.exports = function(router, database) {
     return router;
 };
 
+//routes for login and signup
