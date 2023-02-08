@@ -15,7 +15,8 @@ const TvSeriesContent = ({
   streamingInfo,
   title,
   year,
-  imdbRating
+  imdbRating,
+  imdbLink
 }) => {
   
  
@@ -25,7 +26,7 @@ const TvSeriesContent = ({
       <img className="poster"
         src={posterURLs} alt={title} />
       <b className="title">{title}</b>
-      <span className="media_type">
+      <span className="media_type" href={imdbLink}>
       IMDB Rating: {imdbRating}
         <span className="media_type">{year}</span>
       </span>

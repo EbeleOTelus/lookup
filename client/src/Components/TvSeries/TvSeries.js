@@ -58,6 +58,7 @@ const TvSeries = () => {
   if(content.length > 0){
     
       tvSeriesData = content.map((c, id) => (
+        
         <TvSeriesContent
         key={id}
           age={c.age}
@@ -71,8 +72,8 @@ const TvSeries = () => {
         title={c.title}
         year={c.year} 
         video={c.video}
-      imdbRating={c.imdbRating}/>
-        
+      imdbRating={c.imdbRating}
+      imdbLink={`https://www.imdb.com/title/${c.imdbID}`} />
     ));
   }
   return (

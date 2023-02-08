@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { NavItem } from 'react-bootstrap';
 import "./Search.css";
 import axios from "axios";
+import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
+
 
 const Search = () => {
 
@@ -25,15 +27,15 @@ const Search = () => {
         services: 'prime,netflix,disney,hbo,paramount,starz,showtime,apple,crave',
         type: 'movie',
         order_by: 'imdb_vote_count',
-        year_min: '1990',
+        year_min: '2000',
         year_max: '2020',
-        genres: '18',
+        genres: '',
         genres_relation: 'or',
         desc: 'true',
         language: 'en',
-        min_imdb_rating: '60',
-        max_imdb_rating: '100',
-        min_imdb_vote_count: '10000',
+        min_imdb_rating: '',
+        max_imdb_rating: '',
+        min_imdb_vote_count: '',
         max_imdb_vote_count: '',
         keyword: `${keyword}`,
         output_language: 'en'
@@ -48,7 +50,7 @@ const Search = () => {
       .then(function(response) {
         console.log("response.data.results", response.data.results);
         setContainer(response.data.results);
-        console.log("container======", container)
+        console.log("container======", container);
 
       })
       .catch(function(error) {
@@ -57,32 +59,70 @@ const Search = () => {
 
   };
 
-  
+  // const searchData = container.map((c, id) => (
+  // if (content.length > 0) {
+  //   // let imdbLink = `https://www.imdb.com/title/${item.imdbID}`;
+  //   return (
+  //     <div key={index}>
+  //       <TvSeriesContent
+  //         title={item.title}
+  //         year={item.year}
+  //         age={item.age}
+  //         imdbLink={imdbLink}
+  //         cast={item.cast}
+  //         countries={item.countries}
+  //         genre={item.genres}
+  //         imdbID={item.imdbID}
+  //         imdbRating={item.imdbRating} />
+  //       overview={item.overview}
+  //       posterURLs={item.posterURLs[342]}
+  //       streamingInfo={item.streamingInfo}
+  //       video={item.video}
+
+  //     </div>
+  //   ));
+  // }
 
   const onChangeHandler = (e) => { setKeyword(e.target.value); };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    fetchSearchData()
+    fetchSearchData();
     // setfinalPoint(finalPoint);
-    console.log("keyword -----------", keyword)
+    console.log("keyword -----------", keyword);
   };
 
+  
   return (
     <div className="Search">
 
       <form onSubmit={submitHandler}>
 
-        <input type="text" value={keyword} onChange={onChangeHandler} />
+        <input class="searchInput" type="text" placeholder="Enter title here" value={keyword} onChange={onChangeHandler} />
         <button type='submit'>Submit</button>
 
       </form>
       {container && container.map((item, index) => {
+        let imdbLink = `https://www.imdb.com/title/${item.imdbID}`;
         return (
           <div key={index}>
-
-            <p>{item.originalTitle}</p>
+            <TvSeriesContent
+              title={item.title}
+              year={item.year}
+              age={item.age}
+              imdbLink={imdbLink}
+              cast={item.cast}
+              countries={item.countries}
+              genre={item.genres}
+              imdbID={item.imdbID}
+              imdbRating={item.imdbRating} 
+            overview={item.overview}
+            posterURLs={item.posterURLs[342]}
+            streamingInfo={item.streamingInfo}
+            video={item.video}
+/>
           </div>
+          // <div hfref={imdbLink}></div>
         );
       })}
 
