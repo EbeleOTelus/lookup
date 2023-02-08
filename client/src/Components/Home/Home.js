@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Signup from "../Signup/Signup";
 // import TrendingContent from "../TrendingContent/TrendingContent";
 import "./Home.css";
 
@@ -59,8 +60,10 @@ const Home = (props) => {
     // img4 = `https://image.tmdb.org/t/p/w300${imgs[tempArr[3]].poster_path}`
 
     return (
-    
-    
+
+      <>
+      <Signup />
+      
       <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
         <div className="carousel-inner">
 
@@ -137,6 +140,8 @@ const Home = (props) => {
           <span className="sr-only">Next</span>
         </a>
       </div>
+      
+</>
     );
 
 };

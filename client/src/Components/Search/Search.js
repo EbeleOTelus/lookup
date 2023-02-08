@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavItem } from 'react-bootstrap';
+import Signup from '../Signup/Signup';
 import "./Search.css";
 import axios from "axios";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";

@@ -9,7 +9,8 @@ import TvSeries from './Components/TvSeries/TvSeries';
 import Search from './Components/Search/Search';
 import Home from './Components/Home/Home';
 import SideBar from './Components/NavBar/SideBar';
-
+import Login from './Components/Login/login';
+import Signup from './Components/Signup/Signup';
 
 export default function App() {
   
@@ -22,6 +23,8 @@ export default function App() {
    
       {/* <Container> */}
        <Routes>
+       <Route path='/login' element={<Login/>} />
+       <Route path='/signup' element={<Signup/>} /> 
        <Route path='/' element={<Home/>} exact/>
         <Route path='/trending' element={<Trending/>} exact/>
         <Route path='/movies' element={<Movies/>} />
