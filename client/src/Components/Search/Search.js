@@ -22,16 +22,20 @@ const Search = () => {
       url: 'https://streaming-availability.p.rapidapi.com/search/ultra',
       params: {
         country: 'ca',
-        services: 'prime,netflix,disney,hbo,paramount,starz,showtime,apple',
-        type: 'series',
+        services: 'prime,netflix,disney,hbo,paramount,starz,showtime,apple,crave',
+        type: 'movie',
         order_by: 'imdb_vote_count',
         year_min: '1990',
+        year_max: '2020',
+        genres: '',
+        genres_relation: 'or',
         desc: 'true',
         language: 'en',
         min_imdb_rating: '60',
         max_imdb_rating: '100',
         min_imdb_vote_count: '10000',
-        keyword: `${endPoint}`,
+        max_imdb_vote_count: '',
+        keyword: `${finalPoint}`,
         output_language: 'en'
       },
       headers: {
@@ -58,7 +62,8 @@ const Search = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setfinalPoint(endPoint);
+    fetchSearchData()
+    // setfinalPoint(finalPoint);
   };
 
   return (
@@ -74,7 +79,7 @@ const Search = () => {
         return (
           <div key={index}>
 
-            <p>{endPoint ? item.originalTitle : ???}</p>
+            <p>{item.originalTitle}</p>
           </div>
         );
       })}
