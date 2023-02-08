@@ -8,7 +8,10 @@ const Header = () => {
    <div className="Header-box">
     <span onClick={() => window.scroll(0, 0)} className="Header">
       TvHaven</span>
-      <Search />
+      <div className='loginClass'>
+      <a>Login🎬</a>
+      <a>SignUp</a>
+        </div >
       </div>
   )
 }
