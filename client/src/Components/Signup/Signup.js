@@ -13,7 +13,7 @@ const Signup = () => {
     
     try {
       // Replace this with your signup logic
-      const response = await fetch('/signup', {
+      const response = await fetch('/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ firstname, lastname, email, password }),
@@ -39,7 +39,7 @@ const Signup = () => {
           type="text"
           id="firstname"
           value={firstname}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setFirstname(e.target.value)}
         />
       </div>
       <div>
@@ -48,7 +48,7 @@ const Signup = () => {
           type="text"
           id="lastname"
           value={lastname}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setLastname(e.target.value)}
         />
       </div>
       <div>

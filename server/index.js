@@ -2,84 +2,28 @@ const express = require('express');
 const morgan = require('morgan');
 const bcrypt = require("bcrypt");
 const { Router } = require('express');
-const {pool, register, signIn} = require('./db/db.js');
+const database = require('./db/db.js');
+const authRoutes = require('./routes/authRoutes.js');
 const app = express();
 const port = process.env.PORT || 5000;
 
 // middleware
 app.use(morgan('dev'));
+app.use(express.json())
 
-// const users = {
-// firstname = 'Eszter',
-// lastname = 'Egyud',
-// email = 'a@a.com',
-// password = '1234'
+const authRouter = express.Router();
+authRoutes(authRouter, database);
+app.use('/auth', authRouter);
 
-// };
+const users = {
+firstname: 'Eszter',
+lastname: 'Egyud',
+email: 'a@a.com',
+password: '1234'
 
-// app.get("/login", (req, res) => {
-//   const email = req.body.email;
-//   const password = req.body.password;
-//   if (email && password) {
-//     res.redirect("/");
-//   } else {
-//     const templateVars = {
-//       user: undefined
-//     };
-//     res.render("login", templateVars); //no need as spa ,render not reqd
-//   }
-// });
+}
 
 
-// Router.post("/login", (req, res => {
-//   validateForm(req, res);
-
-// });
-
-// Router.post("/signup",  async (req, res => {
-//   validateForm(req, res);
-app.post("/signup", (request, response) => {
-  // hash the password 
-  console.log('testing');
-  bcrypt
-    .hash(request.body.password, 10)
-    .then((hashedPassword) => {
-      // create a new user instance and collect the data
-      const user = {
-        firstname: request.body.firstname,
-        lastname: request.body.lastname,
-        email: request.body.email,
-        password: hashedPassword,
-      };
-
-      // save the new user
-      // user
-      //   .save()
-
-      register(...user) 
-        // return success if the new user is added to the database successfully
-        .then((result) => {
-          response.status(201).send({
-            message: "User Created Successfully",
-            result,
-          });
-        })
-        // catch error if the new user wasn't added successfully to the database
-        .catch((error) => {
-          response.status(500).send({
-            message: "Error creating user",
-            error,
-          });
-        });
-    })
-    // catch error if the password hash isn't successful
-    .catch((e) => {
-      response.status(500).send({
-        message: "Password was not hashed successfully",
-        e,
-      });
-    });
-});
 
 //login post req
 app.post("/login", (request, response) => {

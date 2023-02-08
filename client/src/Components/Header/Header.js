@@ -9,8 +9,8 @@ const Header = () => {
     <span onClick={() => window.scroll(0, 0)} className="Header">
       TvHaven</span>
       <div className='loginClass'>
-      <a>Login🎬</a>
-      <a>SignUp</a>
+      <a href="/login">Login🎬</a>
+      <a href="/signup">SignUp</a>
         </div >
       </div>
   )
