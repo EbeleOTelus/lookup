@@ -5,14 +5,14 @@ import axios from "axios";
 
 const Search = () => {
 
-  const [endPoint, setEndPoint] = useState('');
+  const [keyword, setKeyword] = useState('');
   const [container, setContainer] = useState([]);
-  const [finalPoint, setfinalPoint] = useState('');
+  // const [finalPoint, setfinalPoint] = useState('');
 
 
-  useEffect(() => {
-    fetchSearchData();
-  }, [endPoint]);
+  // useEffect(() => {
+  //   fetchSearchData();
+  // }, [finalPoint]);
 
   const fetchSearchData = () => {
 
@@ -27,7 +27,7 @@ const Search = () => {
         order_by: 'imdb_vote_count',
         year_min: '1990',
         year_max: '2020',
-        genres: '',
+        genres: '18',
         genres_relation: 'or',
         desc: 'true',
         language: 'en',
@@ -35,7 +35,7 @@ const Search = () => {
         max_imdb_rating: '100',
         min_imdb_vote_count: '10000',
         max_imdb_vote_count: '',
-        keyword: `${finalPoint}`,
+        keyword: `${keyword}`,
         output_language: 'en'
       },
       headers: {
@@ -46,8 +46,9 @@ const Search = () => {
 
     axios.request(options)
       .then(function(response) {
-        console.log(response.data.results);
+        console.log("response.data.results", response.data.results);
         setContainer(response.data.results);
+        console.log("container======", container)
 
       })
       .catch(function(error) {
@@ -58,12 +59,13 @@ const Search = () => {
 
   
 
-  const onChangeHandler = (e) => { setEndPoint(e.target.value); };
+  const onChangeHandler = (e) => { setKeyword(e.target.value); };
 
   const submitHandler = (e) => {
     e.preventDefault();
     fetchSearchData()
     // setfinalPoint(finalPoint);
+    console.log("keyword -----------", keyword)
   };
 
   return (
@@ -71,7 +73,7 @@ const Search = () => {
 
       <form onSubmit={submitHandler}>
 
-        <input type="text" value={endPoint} onChange={onChangeHandler} />
+        <input type="text" value={keyword} onChange={onChangeHandler} />
         <button type='submit'>Submit</button>
 
       </form>
