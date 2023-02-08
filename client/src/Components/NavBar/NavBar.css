@@ -7,7 +7,7 @@
   bottom: 0;
   background-color:black;
   z-index: 50;
-
+  height: 50px
 }
 
 .Mui-selected {
