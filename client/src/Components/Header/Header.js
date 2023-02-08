@@ -2,6 +2,7 @@
 import React from 'react'
 import "./Header.css"
 import Search from '../Search/Search';
+import '../Login/login.css';
 
 const Header = () => {
   return (

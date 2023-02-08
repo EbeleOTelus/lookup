@@ -10,6 +10,7 @@ import Search from './Components/Search/Search';
 import Home from './Components/Home/Home';
 import SideBar from './Components/NavBar/SideBar';
 import Login from './Components/Login/login';
+import './Components/Login/login.css';
 import Signup from './Components/Signup/Signup';
 
 export default function App() {
