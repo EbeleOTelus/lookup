@@ -2,13 +2,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from "./Components/Header/Header";
 import './App.css';
  import NavBar from './Components/NavBar/NavBar';
-import { Container } from '@mui/system';
+// import { Container } from '@mui/system';
 import Trending from './Components/Trending/Trending';
 import Movies from './Components/Movies/Movies';
 import TvSeries from './Components/TvSeries/TvSeries';
 import Search from './Components/Search/Search';
 import Home from './Components/Home/Home';
-
+import SideBar from './Components/NavBar/SideBar';
 
 
 export default function App() {
@@ -17,10 +17,10 @@ export default function App() {
     <>
     <BrowserRouter>
       <Header/>
-      
     <div className="App">
-      <Container>
+      
    
+      {/* <Container> */}
        <Routes>
        <Route path='/' element={<Home/>} exact/>
         <Route path='/trending' element={<Trending/>} exact/>
@@ -30,9 +30,9 @@ export default function App() {
         
         
        </Routes>
-
         
-      </Container>
+      {/* </Container> */}
+      
     </div>
       <NavBar />
       </BrowserRouter>
