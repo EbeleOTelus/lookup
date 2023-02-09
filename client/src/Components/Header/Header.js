@@ -1,7 +1,8 @@
 // Header
 import React from 'react'
 import "./Header.css"
-
+import Search from '../Search/Search';
+import '../Login/login.css';
 
 const Header = () => {
   return (
@@ -16,4 +17,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;
