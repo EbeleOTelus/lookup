@@ -79,7 +79,16 @@ const Movies = () => {
   return (
 
     <div>
-      
+      <Genres
+        type="movie"
+        genres={genres} 
+        setGenres={setGenres}
+        selectedGenres={selectedGenres} 
+        setSelectedGenres={setSelectedGenres}
+        setPage={setPage}
+        
+
+      />
       <div className="trending" >
         {tvMoviesData}
 

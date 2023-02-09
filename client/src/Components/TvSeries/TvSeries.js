@@ -46,7 +46,7 @@ const TvSeries = () => {
       axios.request(options).then(function(response) {
         console.log("HI", response.data.results);
         setContent(response.data.results);
-        setNumOfPages(response.data.total_pages)
+        setNumOfPages(response.data.total_pages);
       })
         .catch(function(error) {
           console.error(error);
@@ -79,7 +79,16 @@ const TvSeries = () => {
   return (
 
     <div>
+      <Genres
+        type="movie"
+        genres={genres} 
+        setGenres={setGenres}
+        selectedGenres={selectedGenres} 
+        setSelectedGenres={setSelectedGenres}
+        setPage={setPage}
+        
 
+      />
       <div className="trending">
         {tvSeriesData}
 
@@ -87,10 +96,10 @@ const TvSeries = () => {
 
       {numberOfPages > 1 && (
 
-        <Page setPage={setPage} numberOfPages={numberOfPages}  style={{color: "blue"}}/>
+        <Page setPage={setPage} numberOfPages={numberOfPages} style={{ color: "blue" }} />
 
       )}
-      
+
     </div>
 
   );

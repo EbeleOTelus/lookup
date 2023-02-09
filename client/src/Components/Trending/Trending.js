@@ -3,11 +3,14 @@ import { useState, useEffect } from "react";
 import TrendingContent from "../TrendingContent/TrendingContent";
 import "./Trending.css";
 import Page from "../Page/Page";
+import Genres from "../Page/Genres";
 
 
 const Trending = () => {
   const [content, setContent] = useState([]);
   const [page, setPage] = useState(10);
+  const [selectedGenres, setSelectedGenres] = useState([]);
+  const [genres, setGenres] = useState([]);
 
   // console.log("options>>>>>>", options)
   const fetchPopular = async () => {
@@ -33,24 +36,33 @@ const Trending = () => {
 
   return (
     <div>
+      <Genres
+        type="movie"
+        genres={genres} 
+        setGenres={setGenres}
+        selectedGenres={selectedGenres} 
+        setSelectedGenres={setSelectedGenres}
+        setPage={setPage}
+        
 
-        <div className="trending">
-          {
-            content && content.map((c) => (
-              <TrendingContent
-                key={c.id}
-                id={c.id}
-                poster={c.poster_path}
-                overview={c.overview}
-                page={`${page}`}
-                title={c.title || c.name}
-                date={c.first_air_date || c.release_date}
-                media_type={c.media_type}
-                vote_average={c.vote_average}
-                release_date={c.release_date} />
-            ))}
-        </div>
-        <Page  setPage={setPage}/>
+      />
+      <div className="trending">
+        {
+          content && content.map((c) => (
+            <TrendingContent
+              key={c.id}
+              id={c.id}
+              poster={c.poster_path}
+              overview={c.overview}
+              page={`${page}`}
+              title={c.title || c.name}
+              date={c.first_air_date || c.release_date}
+              media_type={c.media_type}
+              vote_average={c.vote_average}
+              release_date={c.release_date} />
+          ))}
+      </div>
+      <Page setPage={setPage} />
 
     </div>
   );
