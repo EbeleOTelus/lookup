@@ -26,7 +26,20 @@ const TvSeriesContent = ({
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  // console.log("##1", streamingInfo);
 
+  const streamingInformations = () => {
+    const objectKeys = Object.keys(streamingInfo);
+    // console.log("##2", objectKeys)
+
+    objectKeys.forEach((k) => {
+      console.log("##3", streamingInfo[k].ca.link);
+    });
+  };
+
+  // const streamingInformations = streamingInfo.map((info, index) => {
+  //   return index;
+  // });
 
   const myStyle = { border: "0px", opacity: "1", margin: "0px", padding: "0px", position: "relative" };
 
@@ -56,13 +69,13 @@ const TvSeriesContent = ({
         <Modal.Body>
           <ul className="modalBod">OVERVIEW: {overview}</ul>
           <ul> CAST: {cast.join(", ")} </ul>
-{/* 
+          {/* 
           { Object.keys(streamingInfo).map((key, value) => {
             return <a href={value.ca.link} target="_blank" rel="noreferrer">
             {key}
           </a>
           } */}
-          
+
 
 
           <iframe width="100%" height="315" src={`https://www.youtube.com/embed/${video}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
