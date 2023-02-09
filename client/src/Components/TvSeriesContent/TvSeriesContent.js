@@ -27,10 +27,7 @@ const TvSeriesContent = ({
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const videoRef = useRef(null);
-  //   const handleClick = (event) => {
-  //   event.preventdefault()
-  //   }
+  
    const myStyle = { border: "0px", opacity: "1", margin: "0px", padding: "0px", position: "relative" }
  
   return (
@@ -45,8 +42,7 @@ const TvSeriesContent = ({
         <span className="media_type">{year}</span>
       </span>
     </div>
-    <div>
-  </div>
+   
   <Modal show={show} onHide={handleClose} size="lg"
       centered>
         <Modal.Header closeButton>

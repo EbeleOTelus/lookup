@@ -3,7 +3,9 @@ import "./TrendingContent.css"
 import  { img_300, unavaliable } from "./../images/images.js";
 import { Button } from "react-bootstrap"
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import React, { useRef } from 'react';
+
+import React, { useState } from 'react';
+import { Modal } from 'react-bootstrap';
 
 
 const TrendingContent = ({
@@ -14,19 +16,21 @@ const TrendingContent = ({
   date,
   media_type,
   vote_average,
-  video
+  video,
+  release_date
   
 }) => {
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   
-    const videoRef = useRef(null);
-    const handleClick = () => {
-    
-    }
- 
+   
   return (
     <>
-    <div className="popular">
+    <div className="popular" onClick={handleShow}>
       <img className="poster" 
       src={poster ? `${img_300}/https://image.tmdb.org/t/p/w300/${poster}` : unavaliable} alt={title}/> 
     <b className="title">{title}</b>
@@ -35,17 +39,28 @@ const TrendingContent = ({
     <span className="media_type">{date}</span>
     </span>
     </div>
-    <span>
 
-     <button onClick={handleClick} href={`https://www.youtube.com/watch?v=${video}`} ><YouTubeIcon/>Trailer</button>
-   
-   </span>
-    {/* <Button
-    variant = "contained"
-    startIcon = {<YouTubeIcon/>}
-    color = "secondary"
-    target = "blank"
-    href = {``}/> */}
+    <Modal show={show} onHide={handleClose} size="lg"
+      centered>
+        <Modal.Header closeButton>
+          <Modal.Title className="display-4 text-center">{title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <p className="lead">{overview}</p>
+        
+        <ul className="display-4">Year Of Release: {release_date}</ul>
+        
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    
     </>
   );
 
