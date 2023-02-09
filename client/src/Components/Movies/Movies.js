@@ -39,14 +39,6 @@ const Movies = () => {
   };
 
 
-
-
-
-
-
-
-
-
   useEffect(() => {
     const fetchMovies = () => {
       axios.request(options).then(function(response) {
@@ -76,7 +68,8 @@ const Movies = () => {
         title={c.title}
         year={c.year}
         video={c.video}
-        imdbRating={c.imdbRating} />
+        imdbRating={c.imdbRating} 
+        imdbLink/>
 
     ));
   }
