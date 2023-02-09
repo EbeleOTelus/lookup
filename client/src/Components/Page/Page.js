@@ -1,11 +1,25 @@
 import React from 'react'
 import { createTheme, Pagination, ThemeProvider } from '@mui/material'
+import { green, purple } from '@mui/material/colors';
 
-const darkTheme=createTheme({
-  palletee: {
-    type: "dark",
-  }
-})
+let theme = createTheme({
+  palette: {
+    primary: {
+      main: '#0052cc',
+    },
+    secondary: {
+      main: '#edf2ff',
+    },
+  },
+});
+
+theme = createTheme(theme, {
+  palette: {
+    info: {
+      main: theme.palette.secondary.main,
+    },
+  },
+});
 
  const Page = ({ setPage, numberOfPages = 10 }) => {
 
@@ -23,11 +37,11 @@ const darkTheme=createTheme({
       marginTop: 10,
     }}
     >
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={theme}>
       <Pagination count={numberOfPages} onChange={(e) => handlePageChange(e.target.textContent)}
-      hideNextButton
-      hidePrevButton
-      color='primary'
+      // hideNextButton
+      // hidePrevButton
+      color='secondary'
       />
 
       </ThemeProvider>

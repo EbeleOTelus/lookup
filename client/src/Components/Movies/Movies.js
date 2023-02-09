@@ -6,6 +6,7 @@ import Genres from "../Page/Genres";
 import Page from "../Page/Page";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
 
+
 const Movies = () => {
 
   const [page, setPage] = useState(1);
@@ -25,7 +26,7 @@ const Movies = () => {
       order_by: 'imdb_vote_count',
       year_min: '2000',
       year_max: '2020',
-      page: '1',
+      page: `${page}`,
       desc: 'true',
       language: 'en',
       min_imdb_rating: '70',
@@ -42,15 +43,16 @@ const Movies = () => {
   useEffect(() => {
     const fetchMovies = () => {
       axios.request(options).then(function(response) {
-        console.log("HI",response.data.results);
+        console.log("HI movies response.data.results", response.data);
         setContent(response.data.results);
+        setNumOfPages(response.data.total_pages);
       })
-      .catch(function(error) {
+        .catch(function(error) {
           console.error(error);
-      });
+        });
     };
     fetchMovies();
-  }, []);
+  }, [page]);
 
   if (content.length > 0) {
 
@@ -68,21 +70,28 @@ const Movies = () => {
         title={c.title}
         year={c.year}
         video={c.video}
-        imdbRating={c.imdbRating} 
-        imdbLink/>
+        imdbRating={c.imdbRating}
+        imdbLink />
 
     ));
   }
 
   return (
 
-    
+    <div>
+      
+      <div className="trending" >
+        {tvMoviesData}
 
-    <div className="trending" >
-      {tvMoviesData}
-          
-        </div >
-  
+      </div >
+      {numberOfPages > 1 && (
+
+        <Page setPage={setPage} numberOfPages={numberOfPages}  variant="outlined" color="secondary" />
+
+      )}
+    </div>
+
+
   );
 
 };
