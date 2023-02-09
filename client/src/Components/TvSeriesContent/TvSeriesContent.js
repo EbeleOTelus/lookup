@@ -31,11 +31,21 @@ const TvSeriesContent = ({
   const streamingInformations = () => {
     const objectKeys = Object.keys(streamingInfo);
     // console.log("##2", objectKeys)
-
-    objectKeys.forEach((k) => {
-      console.log("##3", streamingInfo[k].ca.link);
+    const links = objectKeys.map((key) => {
+      return streamingInfo[key].ca.link;
     });
+    
+    return <a href={links[0]} target="_blank" rel="noreferrer">
+{objectKeys[0]}
+    </a>;
+
+    // objectKeys.forEach((k) => {
+    //   console.log("##3", streamingInfo[k].ca.link);
+    // });
   };
+
+  console.log("##4", streamingInformations())
+  
 
   // const streamingInformations = streamingInfo.map((info, index) => {
   //   return index;
@@ -67,6 +77,7 @@ const TvSeriesContent = ({
         </Modal.Header>
 
         <Modal.Body>
+          {streamingInformations()}
           <ul className="modalBod">OVERVIEW: {overview}</ul>
           <ul> CAST: {cast.join(", ")} </ul>
           {/* 
