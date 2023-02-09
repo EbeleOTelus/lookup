@@ -14,11 +14,20 @@ export default function NavBar() {
   
   const getLocationIndex = (location) => {
 
-    if (location.pathname == '/') {
+    if (location.pathname === '/') {
       return 0;
     }
-    if (location.pathname == '/trending') {
+    if (location.pathname === '/trending') {
       return 1;
+    }
+    if (location.pathname === '/movies') {
+      return 2;
+    }
+    if (location.pathname === '/tvseries') {
+      return 3;
+    }
+    if (location.pathname === '/search') {
+      return 4;
     }
 
   }
