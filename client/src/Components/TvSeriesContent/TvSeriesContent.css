@@ -42,6 +42,18 @@
   justify-content: space-between;
   padding-bottom: 5px;
 padding: 0 2px;
+}
 
+.modalTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 50px;
+}
 
+.modalBod {
+  display: flex;
+  justify-content:left;
+  align-items:flex-start;
+  font-size: 25px;
 }
