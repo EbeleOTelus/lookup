@@ -1,5 +1,5 @@
 
-.popular{
+.trendingStyle{
   display: flex;
   flex-direction: column;
   width: 250px;
@@ -13,13 +13,13 @@
 
 }
 
-.popular:hover {
+.trendingStyle:hover {
   background-color:rgb(84, 84, 242);
   color: black;
 }
 
 @media (max-width: 550px) {
-  .popular {
+  .trendingStyle {
     width: 50%;
   }
 }

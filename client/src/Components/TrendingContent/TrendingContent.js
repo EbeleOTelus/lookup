@@ -30,7 +30,7 @@ const TrendingContent = ({
    
   return (
     <>
-    <div className="popular" onClick={handleShow}>
+    <div className="trendingStyle" onClick={handleShow}>
       <img className="poster" 
       src={poster ? `${img_300}/https://image.tmdb.org/t/p/w300/${poster}` : unavaliable} alt={title}/> 
     <b className="title">{title}</b>
