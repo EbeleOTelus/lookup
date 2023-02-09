@@ -10,6 +10,7 @@ const Search = () => {
 
   const [keyword, setKeyword] = useState('');
   const [container, setContainer] = useState([]);
+  // const [searchTerm, setSearchTerm] = useState('');
   // const [finalPoint, setfinalPoint] = useState('');
 
 
@@ -88,21 +89,44 @@ const Search = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    fetchSearchData();
+    // console.log(e.target.value);
+    if (keyword.length > 0 ) {
+      
+
+      fetchSearchData();
+
+    }
+
+    else {
+      refreshPage()
+
+    }
     // setfinalPoint(finalPoint);
     console.log("keyword -----------", keyword);
   };
+  // const handleChange = (e) => {
+  //   setSearchTerm(e.target.value);
+  // };
+  // const resetSearch = () => {
+  //   setKeyword('');
 
+  // };
   
+  function refreshPage() {
+    setContainer([])
+    setKeyword('');
+  }
   return (
     <div className="Search">
 
-      <form onSubmit={submitHandler}>
+      <form>
 
         <input class="searchInput" type="text" placeholder="Enter title here" value={keyword} onChange={onChangeHandler} />
-        <button type='submit'>Submit</button>
-
+        <button onClick={submitHandler}>Submit</button>
+      <button onClick={refreshPage}>Reset</button>
+      
       </form>
+     
       {container && container.map((item, index) => {
         let imdbLink = `https://www.imdb.com/title/${item.imdbID}`;
         return (

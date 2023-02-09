@@ -28,9 +28,9 @@ export default function App() {
        <Route path='/signup' element={<Signup/>} /> 
        <Route path='/' element={<Home/>} exact/>
         <Route path='/trending' element={<Trending/>} exact/>
-        <Route path='/movies' element={<Movies/>} />
-        <Route path='/tvseries' element={<TvSeries/>} />
-        <Route path='/search' element={<Search/>} />
+        <Route path='/movies' element={<Movies/>} exact/>
+        <Route path='/tvseries' element={<TvSeries/>} exact/>
+        <Route path='/search' element={<Search/>} exact/>
         
         
        </Routes>
