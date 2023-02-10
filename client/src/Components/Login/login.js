@@ -32,7 +32,7 @@ const Login = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="">Email:</label>
+        <label htmlFor="email">Email:</label>
         <input
           type="text"
           id="email"email

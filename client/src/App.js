@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from "./Components/Header/Header";
 import './App.css';
@@ -11,9 +12,17 @@ import Home from './Components/Home/Home';
 import SideBar from './Components/NavBar/SideBar';
 import Login from './Components/Login/login';
 import './Components/Login/login.css';
+import Logout from './Components/Logout/Logout';
 import Signup from './Components/Signup/Signup';
 
 export default function App() {
+  const [LoggedIn, setLoggedIn] = useState(null);
+  const logIn = () => {
+    setLoggedIn(true);
+  }
+  const logOut = () => {
+    setLoggedIn(false);
+  }
   
   return (
     <>
@@ -25,6 +34,7 @@ export default function App() {
       {/* <Container> */}
        <Routes>
        <Route path='/login' element={<Login/>} />
+       <Route path='/logout' element={<Logout/>} />
        <Route path='/signup' element={<Signup/>} /> 
        <Route path='/' element={<Home/>} exact/>
         <Route path='/trending' element={<Trending/>} exact/>

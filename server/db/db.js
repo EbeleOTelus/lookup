@@ -36,7 +36,26 @@ const register = (firstname, lastname, email, password) => {
           console.log(err.message);
         });
     }
+
+    const getUserWithEmail = function(email) {
+
+      return pool
+        .query
+        (`SELECT * FROM users WHERE email = $1`, [email])
+    
+        .then((res) => {
+          // return res.rows[0];
+          if (res) {
+            return res.rows[0];
+          } else {
+            return null;
+          }
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    }
       
 
-  module.exports = {pool, register, signIn};
+  module.exports = {pool, register, signIn, getUserWithEmail};
   
