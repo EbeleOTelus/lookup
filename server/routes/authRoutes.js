@@ -46,6 +46,7 @@ module.exports = function(router, database) {
           res.send({ error: "error" });
           return;
         }
+        req.session.userId = user.id;
         res.send({ user: { email: user.email, id: user.id } });
 
       })
@@ -56,8 +57,9 @@ module.exports = function(router, database) {
 
   });
 
-  router.post('/login', (req, res) => {
-    
+  router.post('/logout', (req, res) => {
+    req.session.userId = null;
+    res.send({});
   })
 };
 

@@ -16,18 +16,14 @@ import Logout from './Components/Logout/Logout';
 import Signup from './Components/Signup/Signup';
 
 export default function App() {
-  const [LoggedIn, setLoggedIn] = useState(null);
-  const logIn = () => {
-    setLoggedIn(true);
-  }
-  const logOut = () => {
-    setLoggedIn(false);
-  }
+  
   
   return (
     <>
     <BrowserRouter>
       <Header/>
+
+
     <div className="App">
       
    
