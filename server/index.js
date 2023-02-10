@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const cookieSession = require('cookie-session');
 const bcrypt = require("bcrypt");
 const { Router } = require('express');
 const database = require('./db/db.js');
