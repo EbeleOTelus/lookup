@@ -10,24 +10,25 @@ const Search = () => {
 
   const [keyword, setKeyword] = useState('');
   const [container, setContainer] = useState([]);
-  // const [searchTerm, setSearchTerm] = useState('');
-  // const [finalPoint, setfinalPoint] = useState('');
+  // set search type to movie (true) or series (false) 
+  const [type, setType] = useState("movie");
+
 
 
   // useEffect(() => {
   //   fetchSearchData();
-  // }, [finalPoint]);
+  // }, [keyword]);
 
   const fetchSearchData = () => {
 
-
+    console.log("Search type-------------", type)
     const options = {
       method: 'GET',
       url: 'https://streaming-availability.p.rapidapi.com/search/ultra',
       params: {
         country: 'ca',
         services: 'prime,netflix,disney,hbo,paramount,starz,showtime,apple,crave',
-        type: 'movie',
+        type: `${type}`,
         order_by: 'imdb_vote_count',
         year_min: '2000',
         year_max: '2020',
@@ -61,72 +62,50 @@ const Search = () => {
 
   };
 
-  // const searchData = container.map((c, id) => (
-  // if (content.length > 0) {
-  //   // let imdbLink = `https://www.imdb.com/title/${item.imdbID}`;
-  //   return (
-  //     <div key={index}>
-  //       <TvSeriesContent
-  //         title={item.title}
-  //         year={item.year}
-  //         age={item.age}
-  //         imdbLink={imdbLink}
-  //         cast={item.cast}
-  //         countries={item.countries}
-  //         genre={item.genres}
-  //         imdbID={item.imdbID}
-  //         imdbRating={item.imdbRating} />
-  //       overview={item.overview}
-  //       posterURLs={item.posterURLs[342]}
-  //       streamingInfo={item.streamingInfo}
-  //       video={item.video}
-
-  //     </div>
-  //   ));
-  // }
 
   const onChangeHandler = (e) => { setKeyword(e.target.value); };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    // console.log(e.target.value);
-    if (keyword.length > 0 ) {
-      
-
+     if (keyword.length > 0 ) {
       fetchSearchData();
-
     }
-
     else {
       refreshPage()
-
     }
-    // setfinalPoint(finalPoint);
-    console.log("keyword -----------", keyword);
   };
-  // const handleChange = (e) => {
-  //   setSearchTerm(e.target.value);
-  // };
-  // const resetSearch = () => {
-  //   setKeyword('');
 
-  // };
+  // Axios search for movies if type state is set to true
+  const submitHandlerMovie = (e) => {
+    e.preventDefault()
+    setType("movie");
+  };
+
+  // Axios search for movies if type state is set to true
+  const submitHandlerSeries = (e) => {
+    e.preventDefault()
+    setType("series");
+  };
   
   function refreshPage() {
     setContainer([])
     setKeyword('');
   }
+
   return (
     <div className="Search">
 
-      <form>
+      <form className='search-form' >
 
         <input class="searchInput" type="text" placeholder="Enter title here" value={keyword} onChange={onChangeHandler} />
         <button onClick={submitHandler}>Submit</button>
       <button onClick={refreshPage}>Reset</button>
       
+      <button onClick={submitHandlerMovie}>Movies</button>
+      <button onClick={submitHandlerSeries}>TV Shows</button>
+
       </form>
-     
+    
       {container && container.map((item, index) => {
         let imdbLink = `https://www.imdb.com/title/${item.imdbID}`;
         return (

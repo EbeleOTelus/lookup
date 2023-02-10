@@ -38,9 +38,8 @@ theme = createTheme(theme, {
     }}
     >
       <ThemeProvider theme={theme}>
-      <Pagination count={numberOfPages} onChange={(e) => handlePageChange(e.target.textContent)}
-      // hideNextButton
-      // hidePrevButton
+      <Pagination sx={{button:{color: '#ffffff'}}} count={numberOfPages} onChange={(e) => handlePageChange(e.target.textContent)}
+
       color='secondary'
       />
 
