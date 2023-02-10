@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Signup from "../Signup/Signup";
+// import Signup from "../Signup/Signup";
 // import TrendingContent from "../TrendingContent/TrendingContent";
 import "./Home.css";
-import Carousel from "./Carousel";
+// import Carousel from "./Carousel";
 import Trending from "../Trending/Trending";
 
 const Home = (props) => {
@@ -65,65 +65,30 @@ const Home = (props) => {
         <div className="carousel-inner">
 
           <div className="carousel-item active">
-            <img className="d-block w-100" src={imgArr[0]} alt="First slide" />
+            <img className="d-block w-100" src="https://wallpapercave.com/wp/wp9426168.jpg" alt="First slide" />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[1]} alt="Second slide" />
+            <img className="d-block w-100" src="https://wallpapercave.com/wp/wp5779609.jpg" alt="Second slide" />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[2]} alt="Third slide" />
+            <img className="d-block w-100" src="https://wallpapercave.com/wp/wp9425985.jpg" alt="Third slide" />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[3]} alt="Fourth slide" />
+            <img className="d-block w-100" src="https://w0.peakpx.com/wallpaper/60/160/HD-wallpaper-up-balloons-cartoon-film-house-movie-wind.jpg" alt="Fourth slide" />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[4]} alt="Fourth slide" />
+            <img className="d-block w-100" src="https://wallpapercave.com/wp/wp5920277.jpg"alt="Fourth slide" />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[5]} alt="Fourth slide" />
+            <img className="d-block w-100" src="https://images.pexels.com/photos/15011528/pexels-photo-15011528.png" alt="Fourth slide" />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[6]} alt="Fourth slide" />
+            <img className="d-block w-100" src="https://images.pexels.com/photos/765062/pexels-photo-765062.jpeg" alt="Fourth slide" />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[7]} alt="Fourth slide" />
+            <img className="d-block w-100" src="https://images.pexels.com/photos/13060861/pexels-photo-13060861.jpeg" alt="Fourth slide" />
           </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[8]} alt="Fourth slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[9]} alt="Fourth slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[10]} alt="Fourth slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[11]} alt="Fourth slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[12]} alt="Fourth slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[13]} alt="Fourth slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[14]} alt="Fourth slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[15]} alt="Fourth slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[16]} alt="Fourth slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[17]} alt="Fourth slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[18]} alt="Fourth slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={imgArr[19]} alt="Fourth slide" />
-          </div>
+      
         </div>
 
         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

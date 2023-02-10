@@ -1,4 +1,4 @@
-import { useSpringCarousel } from 'react-spring-carousel';
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 
