@@ -60,7 +60,7 @@ const TvSeries = () => {
     tvSeriesData = content.map((c, id) => (
 
       <TvSeriesContent
-        key={id}
+        key={c.imdbID}
         age={c.age}
         cast={c.cast}
         countries={c.countries}
