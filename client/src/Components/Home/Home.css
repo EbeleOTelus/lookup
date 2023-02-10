@@ -1,4 +1,4 @@
-.home {
+/* .home {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -8,4 +8,13 @@
 .d-block {
   margin-top: 150px;
   border-radius: 15%;
+} */
+
+.home-component {
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel {
+  height: 10vh;
 }

@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Signup from "../Signup/Signup";
 // import TrendingContent from "../TrendingContent/TrendingContent";
 import "./Home.css";
+import Carousel from "./Carousel";
+import Trending from "../Trending/Trending";
 
 const Home = (props) => {
 
@@ -43,7 +45,7 @@ const Home = (props) => {
 
 
     // Create a random non-repeating array from the downloaded images
-    
+
 
     if (imgs) {
       for (let i = 0; i < imgs.length; i++) {
@@ -53,21 +55,14 @@ const Home = (props) => {
     }
   }
 
+  
+  return (
+    
 
-    // img1 = `https://image.tmdb.org/t/p/w300${imgs[tempArr[0]].poster_path}`
-    // img2 = `https://image.tmdb.org/t/p/w300${imgs[tempArr[1]].poster_path}`
-    // img3 = `https://image.tmdb.org/t/p/w300${imgs[tempArr[2]].poster_path}`
-    // img4 = `https://image.tmdb.org/t/p/w300${imgs[tempArr[3]].poster_path}`
-
-    return (
-
-      
-      
+    <div class="home-component">
       
       <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
         <div className="carousel-inner">
-
-
 
           <div className="carousel-item active">
             <img className="d-block w-100" src={imgArr[0]} alt="First slide" />
@@ -130,7 +125,7 @@ const Home = (props) => {
             <img className="d-block w-100" src={imgArr[19]} alt="Fourth slide" />
           </div>
         </div>
-  
+
         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="sr-only">Previous</span>
@@ -140,9 +135,14 @@ const Home = (props) => {
           <span className="sr-only">Next</span>
         </a>
       </div>
-      
 
-    );
+  
+      <Trending/>
+  
+
+    </div>
+
+  );
 
 };
 
