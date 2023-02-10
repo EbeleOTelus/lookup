@@ -22,6 +22,7 @@ const Login = () => {
       if (response.ok) {
         const user = await response.json();
         // Save the user data to local storage or Redux store
+        console.log("user-----", user)
         setError('');
         navigate("/");
       } else {

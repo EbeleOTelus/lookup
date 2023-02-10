@@ -42,12 +42,13 @@ module.exports = function(router, database) {
     const { email, password } = req.body;
     login(email, password)
       .then(authres => {
-        if (!user) {
+        if (!authres) {
           res.send({ error: "error" });
           return;
         }
-        req.session.userId = user.id;
-        res.send({ user: { email: user.email, id: user.id } });
+        console.log("authres---", authres)
+        // req.session.userId = authres.id;
+        res.send({ user: { email: authres.email, id: authres.id } });
 
       })
       .catch(e => {
@@ -57,9 +58,9 @@ module.exports = function(router, database) {
 
   });
 
-  router.post('/logout', (req, res) => {
-    req.session.userId = null;
-    res.send({});
-  })
+  // router.post('/logout', (req, res) => {
+    // req.session.userId = null;
+    // res.send({});
+  // })
 };
 
