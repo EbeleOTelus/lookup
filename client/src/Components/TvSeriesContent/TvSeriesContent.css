@@ -4,14 +4,15 @@
   width: 250px;
 
   padding: 5px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  /* margin-top: 15px;
+  margin-bottom: 15px; */
 
   background-color: #3159a9;
   border-radius: 10px;
   position: relative;
   font-family: Montserrat, sans-serif;
-
+  word-wrap: break-word;
+  margin-bottom: 0px;
 }
 
 .popular:hover {
@@ -32,12 +33,15 @@
 }
 
 .title {
-  width: 100%;
-  height: 60px;
+  width: 80%;
+  height: 55px;
   text-align: center;
   font-size: 17px;
   padding: 8px 0;
-
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ;
+  white-space: pre-wrap;
 }
 
 .media_type {
@@ -52,14 +56,21 @@
   background: #dde1e7;
   border-radius: 20px;
   margin: 20px;
+
 }
 
 .modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45), inset 5px 5px 9px rgba(94, 104, 121, 0.3);
   background: #dde1e7;
   border-radius: 20px;
   margin: 20px;
 }
+
+
+
 
 .modal-footer {
   display: flex;
@@ -71,12 +82,19 @@
   margin: 20px;
 }
 
+/* .modal-dialog {
+  width: 900px;
+  max-width: 1024px;
+} */
 
 .modalTitle {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 50px;
+  font-size: 30px;
+  font-weight:700;
+  text-align: start;
+  margin-right: 10px;
 }
 
 .modal-body {
@@ -103,6 +121,8 @@
   box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45), inset 5px 5px 9px rgba(94, 104, 121, 0.3);
   background: #dde1e7;
   margin: 20px;
+  width: 685px;
+  height: 315px;
 }
 
 /* .trailer-video {
@@ -180,48 +200,13 @@
 
 
 
-/* Hover and shake */
 
-.poster:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
+@media (min-width: 992px){
+.modal-lg {
+  width: 900px;
+  max-width: 1024px;
 }
-
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-
-  /* 10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  /* 30% { transform: translate(3px, 2px) rotate(0deg); } */
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-
-  /* 50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); } */
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-
-  /* 80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); } */
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -283,15 +268,17 @@
 } */
 
 .btn3d.btn-primary {
-  box-shadow: 0 0 0 1px #1d3666 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #648ee1, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0 0 0 1px #1d3666 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #648ee1, 0 8px 8px 1px rgba(0, 0, 0, 0.5); */
   background-color: #3159a9;
   border-radius: 5%;
+  padding: 2px;
 }
 
 .btn3d.btn-primary:active,
 .btn3d.btn-primary.active {
-  box-shadow: 0 0 0 1px #7b3bfc inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 0 0 1px #7b3bfc inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3); */
   background-color: #4274D7;
+  padding: 2px;
 }
 
 /* 

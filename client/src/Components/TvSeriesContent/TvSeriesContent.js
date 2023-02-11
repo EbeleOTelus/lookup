@@ -122,7 +122,7 @@ const TvSeriesContent = ({
 
           <img className="poster"
             src={posterURLs} alt={title} />
-          <b className="title">{title}</b>
+          <p className="title">{title}</p>
           <span className="media_type" href={imdbLink}>
             IMDB Rating: {imdbRating}
             <span className="media_type">{year}</span>
@@ -135,24 +135,23 @@ const TvSeriesContent = ({
 
 
       <Modal show={show} onHide={handleClose} size="lg"
-        centered className="tv-box">
+        centered className="tv-box" width="900px">
 
         <Modal.Header >
-          <div modal-header-right>
+ 
             <Modal.Title className="modalTitle">{title}</Modal.Title>
-
-
-            <div className="modalHeaderLeft">
-
-
-
 
               {streamingInformation().map((element) => {
                 return element;
               })}
-            </div>
 
-          </div>
+{/* 
+            <div className="modalHeaderLeft">
+
+
+
+            </div> */}
+
 
 
 
