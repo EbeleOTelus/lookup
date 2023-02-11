@@ -42,6 +42,7 @@ module.exports = function(router, database) {
     const { email, password } = req.body;
     login(email, password)
       .then(authres => {
+        console.log("req.body--------------", req.body);
         if (!authres) {
           res.send({ error: "error" });
           return;
@@ -58,9 +59,9 @@ module.exports = function(router, database) {
 
   });
 
-  // router.post('/logout', (req, res) => {
+  router.post('/logout', (req, res) => {
     // req.session.userId = null;
-    // res.send({});
-  // })
+    res.send({});
+  })
 };
 

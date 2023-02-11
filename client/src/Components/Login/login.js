@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
 
-const Login = () => {
+const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -22,7 +22,10 @@ const Login = () => {
       if (response.ok) {
         const user = await response.json();
         // Save the user data to local storage or Redux store
+        // response.session.userId = user.id;
         console.log("user-----", user)
+        props.setIsLoggedIn(true)
+        // props.setEmail(email);
         setError('');
         navigate("/");
       } else {

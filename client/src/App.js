@@ -16,12 +16,12 @@ import Logout from './Components/Logout/Logout';
 import Signup from './Components/Signup/Signup';
 
 export default function App() {
-  
-  
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [email, setEmail] = useState('');
   return (
     <>
     <BrowserRouter>
-      <Header/>
+      <Header isLoggedIn={isLoggedIn}/>
 
 
     <div className="App">
@@ -29,8 +29,8 @@ export default function App() {
    
       {/* <Container> */}
        <Routes>
-       <Route path='/login' element={<Login/>} />
-       <Route path='/logout' element={<Logout/>} />
+       <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
+       <Route path='/logout' element={<Logout setIsLoggedIn={setIsLoggedIn}/>} />
        <Route path='/signup' element={<Signup/>} /> 
        <Route path='/' element={<Home/>} exact/>
         <Route path='/trending' element={<Trending/>} exact/>

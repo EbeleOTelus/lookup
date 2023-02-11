@@ -6,40 +6,19 @@ const Logout = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-const handleLogout = async (event) => {
-  event.preventDefault();
-    
-  try {
-    // Replace this with your authentication logic
-    const response = await fetch('/auth/logout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-     
-    });
-
-    if (response.ok) {
-      const user = await response.json();
-      // Save the user data to local storage or Redux store
-      setError('');
-      navigate("/");
-    } else {
-      setError('Incorrect email or password');
-    }
-  } catch (err) {
-    setError('Something went wrong, please try again');
-  }
-
-
-
-
-}
+  const handleLogout = () => {
+    // Perform any necessary logout logic here, such as clearing local storage or making a API call
+    localStorage.clear();
+     navigate("/login");
+    // setIsLoggedIn(false);
+  };
 
 
 
   return (
-    <div>
-      <a href="/logout">Login🎬</a>
-    </div>
+    <form>
+
+    </form>
   )
 }
 
