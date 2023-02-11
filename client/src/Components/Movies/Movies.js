@@ -6,6 +6,9 @@ import Genres from "../Page/Genres";
 import Page from "../Page/Page";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
 import "../TvSeries/TvSeries.css";
+import "./Movies.css";
+
+
 
 const Movies = () => {
 
@@ -14,6 +17,7 @@ const Movies = () => {
   const [numberOfPages, setNumOfPages] = useState();
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
+  const video = require('../video/movie.mp4');
   let tvMoviesData = [];
 
   const options = {
@@ -79,16 +83,21 @@ const Movies = () => {
   return (
 
     <div>
-      
+
       <div className="title-css">
         {tvMoviesData}
 
       </div>
       {numberOfPages > 1 && (
 
-        <Page setPage={setPage} numberOfPages={numberOfPages}  variant="outlined" color="secondary" />
+        <Page setPage={setPage} numberOfPages={numberOfPages} variant="outlined" color="secondary" />
 
       )}
+      <div className="video-background">
+        <video autoPlay muted loop>
+          <source src={video} type="video/mp4" />
+        </video>
+      </div>
     </div>
 
 

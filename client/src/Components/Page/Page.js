@@ -35,6 +35,8 @@ theme = createTheme(theme, {
       display: "flex",
       justifyContent: "center",
       marginTop: 10,
+      position: "relative",
+      zIndex: 1,
     }}
     >
       <ThemeProvider theme={theme}>

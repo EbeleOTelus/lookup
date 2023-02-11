@@ -7,6 +7,8 @@ import Page from "../Page/Page";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
 import "./TvSeries.css";
 
+
+
 const TvSeries = () => {
 
   const [page, setPage] = useState(1);
@@ -14,6 +16,9 @@ const TvSeries = () => {
   const [numberOfPages, setNumOfPages] = useState();
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
+
+  const video = require('../video/Tv.mp4');
+
   let tvSeriesData = [];
 
   // https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability
@@ -46,7 +51,7 @@ const TvSeries = () => {
       axios.request(options).then(function(response) {
         console.log("TV series response.data.results from axios req====>>>>>>>>>>>>>===", response.data.results);
         setContent(response.data.results);
-        setNumOfPages(response.data.total_pages)
+        setNumOfPages(response.data.total_pages);
       })
         .catch(function(error) {
           console.error(error);
@@ -88,11 +93,19 @@ const TvSeries = () => {
 
       {numberOfPages > 1 && (
 
-        <Page setPage={setPage} numberOfPages={numberOfPages}  style={{color: "blue"}}/>
+        <Page setPage={setPage} numberOfPages={numberOfPages} style={{ color: "blue" }} />
 
       )}
-      
+      <div className="video-background">
+        <video autoPlay muted loop>
+          <source src={video} type="video/mp4" />
+        </video>
+      </div>
+
     </div>
+
+    
+    
 
   );
 
