@@ -26,21 +26,25 @@ module.exports = function(router, database) {
   //   });
   // return router;
 
+   
   const login = function(email, password) {
+
+    
     return database.getUserWithEmail(email)
-      .then(user => {
-        if (password, user.password) {
-
-          return user;
-        }
-        return null;
-
-      });
+    .then(user => {
+      if (password, user.password) {
+        
+        return user;
+      }
+      return null;
+      
+    });
   };
-
+  
   router.post('/login', (req, res) => {
-    const { email, password } = req.body;
-    login(email, password)
+    const user = req.body;
+    // const { email, password } = req.body;
+    login(user.email, user.password)
       .then(authres => {
         if (!user) {
           res.send({ error: "error" });
