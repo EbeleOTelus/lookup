@@ -56,7 +56,7 @@ const TvSeriesContent = ({
       console.log("key in TvSeriesContent.js >>> >>> >>>", key);
 
       if (key in serviceInfo) {
-        return <a key={index} href={streamingInfo[key].ca.link} target="_blank" rel="noopener noreferrer"><img src={serviceInfo[key]} alt=""  class="streamer-logo"/></a>;
+        return <a key={index} href={streamingInfo[key].ca.link} target="_blank" rel="noopener noreferrer"><img src={serviceInfo[key]} alt="" class="streamer-logo" /></a>;
       }
 
       if (!key) {
@@ -105,8 +105,10 @@ const TvSeriesContent = ({
       <Modal show={show} onHide={handleClose} size="lg"
         centered>
 
-        <Modal.Header closeButton>
+        <Modal.Header >
           <Modal.Title className="modalTitle">{title}</Modal.Title>
+
+
           <div className="modalHeaderLeft">
             <a href={`https://www.imdb.com/title/${imdbID}`} target="_blank" rel="noreferrer">
               <img height="50px" src={"https://m.media-amazon.com/images/G/01/IMDb/BG_rectangle._CB1509060989_SY230_SX307_AL_.png"} alt="Coding Beauty logo"></img>
@@ -115,11 +117,15 @@ const TvSeriesContent = ({
               return element;
             })}
           </div>
+
+
         </Modal.Header>
 
         <Modal.Body>
-          <ul className="modalBod">OVERVIEW: {overview}</ul>
-          <ul> CAST: {cast.join(", ")} </ul>
+          <div className="modalBod">
+            <div >OVERVIEW: {overview}</div>
+            <div > CAST: {cast.join(", ")} </div>
+          </div>
 
           <iframe width="100%" height="315" src={`https://www.youtube.com/embed/${video}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </Modal.Body>

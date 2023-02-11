@@ -61,7 +61,7 @@ const Home = (props) => {
 
     <div class="home-component">
       
-      <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+      <div id="carouselExampleControls" className="carousel slide" data-ride="carousel" data-interval="3500">
         <div className="carousel-inner">
 
           <div className="carousel-item active">
