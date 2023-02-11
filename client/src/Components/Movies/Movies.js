@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Genres from "../Page/Genres";
 import Page from "../Page/Page";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
-
+import "../TvSeries/TvSeries.css";
 
 const Movies = () => {
 
@@ -57,12 +57,13 @@ const Movies = () => {
   if (content.length > 0) {
 
     tvMoviesData = content.map((c, id) => (
+
       <TvSeriesContent
         key={id}
         age={c.age}
         cast={c.cast}
         countries={c.countries}
-        genre={c.genre}
+        genres={c.genres}
         imdbID={c.imdbID}
         overview={c.overview}
         posterURLs={c.posterURLs[342]}
@@ -71,8 +72,7 @@ const Movies = () => {
         year={c.year}
         video={c.video}
         imdbRating={c.imdbRating}
-        imdbLink />
-
+        imdbLink={`https://www.imdb.com/title/${c.imdbID}`} />
     ));
   }
 
@@ -80,10 +80,10 @@ const Movies = () => {
 
     <div>
       
-      <div className="trending" >
+      <div className="title-css">
         {tvMoviesData}
 
-      </div >
+      </div>
       {numberOfPages > 1 && (
 
         <Page setPage={setPage} numberOfPages={numberOfPages}  variant="outlined" color="secondary" />

@@ -4,6 +4,7 @@ import Signup from '../Signup/Signup';
 import "./Search.css";
 import axios from "axios";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
+import Button from '../Button/Button';
 
 
 const Search = () => {
@@ -129,6 +130,9 @@ const Search = () => {
           // <div hfref={imdbLink}></div>
         );
       })}
+
+      <Button/>
+
 
     </div>
   );

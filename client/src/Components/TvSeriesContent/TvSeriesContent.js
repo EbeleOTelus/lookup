@@ -13,13 +13,15 @@ const paramount = require('../images/logoParamount.jpg');
 const prime = require('../images/logoPrime.png');
 const showtime = require('../images/logoShowtime.png');
 const starz = require('../images/logoStarz.png');
+const greenCheckMark = require('../images/green-check-mark-icon-transparent-background-24.png');
+
 
 const TvSeriesContent = ({
 
   age,
   cast,
   countries,
-  genre,
+  genres,
   imdbID,
   overview,
   posterURLs,
@@ -36,7 +38,7 @@ const TvSeriesContent = ({
   const handleShow = () => setShow(true);
   // console.log("##1", streamingInfo);
 
-  const streamingInformations = () => {
+  const streamingInformation = () => {
     const objectKeys = Object.keys(streamingInfo);
     console.log("##2", objectKeys);
 
@@ -53,10 +55,10 @@ const TvSeriesContent = ({
     };
 
     const links = objectKeys.map((key, index) => {
-      console.log("key in TvSeriesContent.js >>> >>> >>>", key);
+      // console.log("key in TvSeriesContent.js >>> >>> >>>", key);
 
       if (key in serviceInfo) {
-        return <a key={index} href={streamingInfo[key].ca.link} target="_blank" rel="noopener noreferrer"><img src={serviceInfo[key]} alt="" class="streamer-logo" /></a>;
+        return <button type="button" class="btn btn-warning btn-lg  btn-large-custom btn3d" style={{ width: "150px", height: "80px" }} ><span class="glyphicon glyphicon-warning-sign"></span> <a key={index} href={streamingInfo[key].ca.link} target="_blank" rel="noopener noreferrer"><img src={serviceInfo[key]} alt="" class="streamer-logo" /></a></button>;
       }
 
       if (!key) {
@@ -67,77 +69,130 @@ const TvSeriesContent = ({
     return links;
   };
 
+  const genreInfo = () => {
+    const objectValues = Object.values(genres);
+    console.log("##2", objectValues);
 
+    const genInfo = { "1": "Biography", "10402": "Music", "10749": "Romance", "10751": "Family", "10752": "War", "10763": "News", "10764": "Reality", "10767": "Talk Show", "12": "Adventure", "14": "Fantasy", "16": "Animation", "18": "Drama", "2": "Film Noir", "27": "Horror", "28": "Action", "3": "Game Show", "35": "Comedy", "36": "History", "37": "Western", "4": "Musical", "5": "Sport", "53": "Thriller", "6": "Short", "7": "Adult", "80": "Crime", "878": "Science Fiction", "9648": "Mystery", "99": "Documentary" };
 
-  console.log("##4", streamingInformations());
+    const genreArr = objectValues.map((key, index) => {
+      console.log("genrekey in TvSeriesContent.js >>> >>> >>>", key);
+
+      if (key in genInfo) {
+
+        return <div key={index} >&nbsp;&nbsp;{genInfo[key]}&nbsp;&nbsp;</div>;
+
+      }
+
+      if (!key) {
+        return <div> Not available in any streaming service</div>;
+      }
+    });
+    console.log("tvseriescontent genreArr ==== ", genreArr);
+    return genreArr;
+  };
+
+  console.log("tvseriescontent genreInfo------------------------------- ", genreInfo());
 
 
   // const streamerLogo = () => {
-  //   if (streamingInformations === 'netflix') {
+  //   if (streamingInformation === 'netflix') {
   //     return <img src={netflix} alt=""> NETFLIX </img>
   //   }
-  //   if (streamingInformations === 'netflix') {
+  //   if (streamingInformation === 'netflix') {
   //     return <img src={netflix} alt=""> NETFLIX </img>
   //   } 
 
 
   // }
 
-  // const streamingInformations = streamingInfo.map((info, index) => {
+  // const streamingInformation = streamingInfo.map((info, index) => {
   //   return index;
   // });
 
   // const myStyle = { border: "0px", opacity: "1", margin: "0px", padding: "0px", position: "relative" };
 
   return (
-    <>
-      <div className="popular" onClick={handleShow}>
+    < div>
 
-        <img className="poster"
-          src={posterURLs} alt={title} />
-        <b className="title">{title}</b>
-        <span className="media_type" href={imdbLink}>
-          IMDB Rating: {imdbRating}
-          <span className="media_type">{year}</span>
-        </span>
-      </div>
+      <button type="button" class="btn btn-primary btn-lg btn3d" onClick={handleShow}><span class="glyphicon glyphicon-thumbs-up"></span>
+
+        <div className="popular">
+
+
+          <img className="poster"
+            src={posterURLs} alt={title} />
+          <b className="title">{title}</b>
+          <span className="media_type" href={imdbLink}>
+            IMDB Rating: {imdbRating}
+            <span className="media_type">{year}</span>
+          </span>
+        </div>
+
+
+      </button>
+
+
 
       <Modal show={show} onHide={handleClose} size="lg"
-        centered>
+        centered className="tv-box">
 
         <Modal.Header >
-          <Modal.Title className="modalTitle">{title}</Modal.Title>
+          <div modal-header-right>
+            <Modal.Title className="modalTitle">{title}</Modal.Title>
 
 
-          <div className="modalHeaderLeft">
-            <a href={`https://www.imdb.com/title/${imdbID}`} target="_blank" rel="noreferrer">
-              <img height="50px" src={"https://m.media-amazon.com/images/G/01/IMDb/BG_rectangle._CB1509060989_SY230_SX307_AL_.png"} alt="Coding Beauty logo"></img>
-            </a>
-            {streamingInformations().map((element) => {
-              return element;
-            })}
+            <div className="modalHeaderLeft">
+
+
+
+
+              {streamingInformation().map((element) => {
+                return element;
+              })}
+            </div>
+
           </div>
+
 
 
         </Modal.Header>
 
         <Modal.Body>
           <div className="modalBod">
-            <div >OVERVIEW: {overview}</div>
-            <div > CAST: {cast.join(", ")} </div>
+
+            <div className="overview" > <strong>OVERVIEW: </strong>{overview}</div>
+
+            <div className="cast" > <strong>CAST: </strong>CAST: {cast.join(", ")} </div>
+
+            <div className="genre-modal"> <strong>GENRES: </strong>
+              {genreInfo().map((element) => {
+                return element;
+              })}
+            </div>
+
           </div>
 
-          <iframe width="100%" height="315" src={`https://www.youtube.com/embed/${video}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe className="trailer-video" width="100%" height="315" src={`https://www.youtube.com/embed/${video}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
+
+          <button type="button" class="btn btn-warning btn-lg btn-large-custom btn3d" style={{ width: "150px", height: "80px" }} ><span class="glyphicon glyphicon-warning-sign"></span>
+
+            <a href={`https://www.imdb.com/title/${imdbID}`} target="_blank" rel="noreferrer">
+              <img height="50px" src={"https://m.media-amazon.com/images/G/01/IMDb/BG_rectangle._CB1509060989_SY230_SX307_AL_.png"} alt="Coding Beauty logo"></img>
+            </a>
+
+          </button>
+
+
+
+          <button type="button" class="btn btn-warning btn-lg btn-large-custom btn3d" onClick={handleClose} style={{ width: "60px", height: "60px" }}  ><span class="glyphicon glyphicon-off"></span><img src="http://clipart-library.com/images_k/green-check-mark-icon-transparent-background/green-check-mark-icon-transparent-background-24.png" alt="" style={{ width: "30px" }} ></img></button>
 
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 };
 

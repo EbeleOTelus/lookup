@@ -44,7 +44,7 @@ const TvSeries = () => {
   useEffect(() => {
     const fetchTvSeries = () => {
       axios.request(options).then(function(response) {
-        console.log("HI", response.data.results);
+        console.log("TV series response.data.results from axios req====>>>>>>>>>>>>>===", response.data.results);
         setContent(response.data.results);
         setNumOfPages(response.data.total_pages)
       })
@@ -64,7 +64,7 @@ const TvSeries = () => {
         age={c.age}
         cast={c.cast}
         countries={c.countries}
-        genre={c.genre}
+        genres={c.genres}
         imdbID={c.imdbID}
         overview={c.overview}
         posterURLs={c.posterURLs[342]}
@@ -76,11 +76,12 @@ const TvSeries = () => {
         imdbLink={`https://www.imdb.com/title/${c.imdbID}`} />
     ));
   }
+
   return (
 
     <div>
 
-      <div className="trending">
+      <div className="title-css">
         {tvSeriesData}
 
       </div>
