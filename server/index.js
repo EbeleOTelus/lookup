@@ -10,7 +10,12 @@ const port = process.env.PORT || 5000;
 
 // middleware
 app.use(morgan('dev'));
-app.use(express.json())
+app.use(express.json());
+app.use(cookieSession({
+  name: 'session',
+  keys: ['EBELE'],
+  maxAge: 24 * 60 * 60 * 1000
+}));
 
 const authRouter = express.Router();
 authRoutes(authRouter, database);
