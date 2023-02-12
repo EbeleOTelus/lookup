@@ -10,11 +10,11 @@ import Button from '../Button/Button';
 const Search = () => {
 
   const [keyword, setKeyword] = useState('');
-  const [container, setContainer] = useState([]);
+  const [content, setContent] = useState([]);
   // set search type to movie (true) or series (false) 
   const [type, setType] = useState("movie");
 
-
+  let tvSeriesData = [];
 
   // useEffect(() => {
   //   fetchSearchData();
@@ -22,7 +22,7 @@ const Search = () => {
 
   const fetchSearchData = () => {
 
-    console.log("Search type-------------", type)
+    console.log("Search type-------------", type);
     const options = {
       method: 'GET',
       url: 'https://streaming-availability.p.rapidapi.com/search/ultra',
@@ -53,8 +53,8 @@ const Search = () => {
     axios.request(options)
       .then(function(response) {
         console.log("response.data.results", response.data.results);
-        setContainer(response.data.results);
-        // console.log("container======", container);
+        setContent(response.data.results);
+        // console.log("content======", content);
 
       })
       .catch(function(error) {
@@ -68,30 +68,57 @@ const Search = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-     if (keyword.length > 0 ) {
+    if (keyword.length > 0) {
       fetchSearchData();
     }
     else {
-      refreshPage()
+      refreshPage();
     }
   };
 
   // Axios search for movies if type state is set to true
   const submitHandlerMovie = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setType("movie");
   };
 
   // Axios search for movies if type state is set to true
   const submitHandlerSeries = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setType("series");
   };
-  
+
   function refreshPage() {
-    setContainer([])
+    setContent([]);
     setKeyword('');
   }
+
+  if (content.length > 0) {
+
+    tvSeriesData = content.map((c, id) => (
+
+      <TvSeriesContent
+        key={id}
+        age={c.age}
+        cast={c.cast}
+        countries={c.countries}
+        genres={c.genres}
+        imdbID={c.imdbID}
+        overview={c.overview}
+        posterURLs={c.posterURLs[342]}
+        streamingInfo={c.streamingInfo}
+        title={c.title}
+        year={c.year}
+        video={c.video}
+        imdbRating={c.imdbRating}
+        imdbLink={`https://www.imdb.com/title/${c.imdbID}`} />
+    ));
+  }
+
+
+
+
+
 
   return (
     <div className="Search">
@@ -99,39 +126,26 @@ const Search = () => {
       <form className='search-form' >
 
         <input class="searchInput" type="text" placeholder="Enter title here" value={keyword} onChange={onChangeHandler} />
-        <button onClick={submitHandler}>Submit</button>
-      <button onClick={refreshPage}>Reset</button>
-      
-      <button onClick={submitHandlerMovie}>Movies</button>
-      <button onClick={submitHandlerSeries}>TV Shows</button>
+
+        <div class="m-4">
+
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={submitHandlerMovie}>Movies</button>
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={submitHandlerSeries}>TV Shows</button>
+         
+        </div>
+
+
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={submitHandler}>Submit</button>
+
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={refreshPage}>Reset</button>
 
       </form>
-    
-      {container && container.map((item, index) => {
-        let imdbLink = `https://www.imdb.com/title/${item.imdbID}`;
-        return (
-          <div key={index}>
-            <TvSeriesContent
-              title={item.title}
-              year={item.year}
-              age={item.age}
-              imdbLink={imdbLink}
-              cast={item.cast}
-              countries={item.countries}
-              genre={item.genres}
-              imdbID={item.imdbID}
-              imdbRating={item.imdbRating} 
-            overview={item.overview}
-            posterURLs={item.posterURLs[342]}
-            streamingInfo={item.streamingInfo}
-            video={item.video}
-/>
-          </div>
-          // <div hfref={imdbLink}></div>
-        );
-      })}
 
-      <Button/>
+      <div className="title-css">
+        {tvSeriesData}
+
+      </div>
+
 
 
     </div>

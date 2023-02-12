@@ -69,28 +69,30 @@ const TvSeriesContent = ({
     return links;
   };
 
-  const genreInfo = () => {
-    const objectValues = Object.values(genres);
-    console.log("##2", objectValues);
+  // const genreInfo = () => {
+  //   const objectValues = Object.values(genres);
+  //   console.log("##2", objectValues);
 
-    const genInfo = { "1": "Biography", "10402": "Music", "10749": "Romance", "10751": "Family", "10752": "War", "10763": "News", "10764": "Reality", "10767": "Talk Show", "12": "Adventure", "14": "Fantasy", "16": "Animation", "18": "Drama", "2": "Film Noir", "27": "Horror", "28": "Action", "3": "Game Show", "35": "Comedy", "36": "History", "37": "Western", "4": "Musical", "5": "Sport", "53": "Thriller", "6": "Short", "7": "Adult", "80": "Crime", "878": "Science Fiction", "9648": "Mystery", "99": "Documentary" };
+  //   const genInfo = { "1": "Biography", "10402": "Music", "10749": "Romance", "10751": "Family", "10752": "War", "10763": "News", "10764": "Reality", "10767": "Talk Show", "12": "Adventure", "14": "Fantasy", "16": "Animation", "18": "Drama", "2": "Film Noir", "27": "Horror", "28": "Action", "3": "Game Show", "35": "Comedy", "36": "History", "37": "Western", "4": "Musical", "5": "Sport", "53": "Thriller", "6": "Short", "7": "Adult", "80": "Crime", "878": "Science Fiction", "9648": "Mystery", "99": "Documentary" };
 
-    const genreArr = objectValues.map((key, index) => {
-      console.log("genrekey in TvSeriesContent.js >>> >>> >>>", key);
+  //   const genreArr = objectValues.map((key, index) => {
+  //     console.log("genrekey in TvSeriesContent.js >>> >>> >>>", key);
 
-      if (key in genInfo) {
+  //     if (key in genInfo) {
 
-        return <div key={index} >&nbsp;&nbsp;{genInfo[key]}&nbsp;&nbsp;</div>;
+  //       return <div key={index} >&nbsp;&nbsp;{genInfo[key]}&nbsp;&nbsp;</div>;
 
-      }
+  //     }
 
-      if (!key) {
-        return <div> Not available in any streaming service</div>;
-      }
-    });
-    console.log("tvseriescontent genreArr ==== ", genreArr);
-    return genreArr;
-  };
+  //     if (!key) {
+  //       return <div> Not available in any streaming service</div>;
+  //     }
+  //   });
+  //   console.log("tvseriescontent genreArr ==== ", genreArr);
+  //   return genreArr;
+  // };
+
+  
 
   // console.log("tvseriescontent genreInfo------------------------------- ", genreInfo());
 
@@ -164,11 +166,11 @@ const TvSeriesContent = ({
 
             <div className="cast" > <strong>CAST: </strong>CAST: {cast.join(", ")} </div>
 
-            <div className="genre-modal"> <strong>GENRES: </strong>
+            {/* <div className="genre-modal"> <strong>GENRES: </strong>
               {genreInfo().map((element) => {
                 return element;
               })}
-            </div>
+            </div> */}
 
           </div>
 
