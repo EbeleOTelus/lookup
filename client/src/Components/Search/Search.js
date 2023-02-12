@@ -128,6 +128,15 @@ const Search = () => {
 
         <input class="searchInput" type="text" placeholder="Enter title here" value={keyword} onChange={onChangeHandler} />
 
+
+{/* 
+
+      <input onChange={submitHandlerMovie} type="radio" name="movie" value="movie" /> Movies
+      <input onChange={submitHandlerSeries} type="checkbox" name="series" value="series" /> TV Shows
+ */}
+
+
+
         <div class="m-4">
 
           <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={submitHandlerMovie}>Movies</button>
