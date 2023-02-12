@@ -40,7 +40,7 @@ const TvSeriesContent = ({
 
   const streamingInformation = () => {
     const objectKeys = Object.keys(streamingInfo);
-    console.log("##2", objectKeys);
+    // console.log("##2", objectKeys);
 
     const serviceInfo = {
       prime: prime,
@@ -92,7 +92,7 @@ const TvSeriesContent = ({
     return genreArr;
   };
 
-  console.log("tvseriescontent genreInfo------------------------------- ", genreInfo());
+  // console.log("tvseriescontent genreInfo------------------------------- ", genreInfo());
 
 
   // const streamerLogo = () => {

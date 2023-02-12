@@ -17,16 +17,19 @@ export default function NavBar() {
     if (location.pathname === '/') {
       return 0;
     }
-    if (location.pathname === '/trending') {
+    // if (location.pathname === '/trending') {
+    //   return 1;
+    // }
+    if (location.pathname === '/movies') {
       return 1;
     }
-    if (location.pathname === '/movies') {
+    if (location.pathname === '/tvseries') {
       return 2;
     }
-    if (location.pathname === '/tvseries') {
+    if (location.pathname === '/search') {
       return 3;
     }
-    if (location.pathname === '/search') {
+    if (location.pathname === '/leaving') {
       return 4;
     }
 
@@ -66,11 +69,11 @@ export default function NavBar() {
         }}
       >
         <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Home" icon={<HomeIcon onClick={() => navigate("/")}/>} />
-        <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Most Popular" icon={<WhatshotIcon onClick={() => navigate("/trending")}/>} />
+        {/* <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Most Popular" icon={<WhatshotIcon onClick={() => navigate("/trending")}/>} /> */}
         <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Movies" icon={<MovieIcon onClick={() => navigate("/movies")}/>} />
         <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Tv Shows" icon={<TvIcon onClick={() => navigate("/tvseries")}/>} />
-        <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Search" icon={<SearchIcon onClick={() => {navigate("/search"); setValue(4)}}/>} />
-
+        <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Search" icon={<SearchIcon onClick={() => {navigate("/search"); setValue(3)}}/>} />
+        <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Leaving Soon" icon={<WhatshotIcon onClick={() => {navigate("/leaving"); setValue(4)}}/>} />
       </BottomNavigation>
    
   );

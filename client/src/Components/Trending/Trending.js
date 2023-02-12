@@ -13,7 +13,7 @@ const Trending = () => {
   const fetchPopular = async () => {
     return axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}`)
       .then(({ data }) => {
-        console.log("data>>>>>", data.results);
+        // console.log("data>>>>>", data.results);
         return data;
       }).catch((error) => {
         console.error(error);

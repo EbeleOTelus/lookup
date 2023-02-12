@@ -54,7 +54,7 @@ const Search = () => {
       .then(function(response) {
         console.log("response.data.results", response.data.results);
         setContainer(response.data.results);
-        console.log("container======", container);
+        // console.log("container======", container);
 
       })
       .catch(function(error) {

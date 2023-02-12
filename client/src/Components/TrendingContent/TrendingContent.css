@@ -1,4 +1,13 @@
-
+.trending{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+  
+}
 .trendingStyle{
   display: flex;
   flex-direction: column;

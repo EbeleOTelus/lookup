@@ -49,7 +49,7 @@ const TvSeries = () => {
   useEffect(() => {
     const fetchTvSeries = () => {
       axios.request(options).then(function(response) {
-        console.log("TV series response.data.results from axios req====>>>>>>>>>>>>>===", response.data.results);
+        // console.log("TV series response.data.results from axios req====>>>>>>>>>>>>>===", response.data.results);
         setContent(response.data.results);
         setNumOfPages(response.data.total_pages);
       })
@@ -60,10 +60,12 @@ const TvSeries = () => {
     fetchTvSeries();
   }, [page]);
 
+  // console.log("content-------", content);
+
   if (content.length > 0) {
 
+   
     tvSeriesData = content.map((c, id) => (
-
       <TvSeriesContent
         key={id}
         age={c.age}

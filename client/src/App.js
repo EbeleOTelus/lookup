@@ -14,6 +14,7 @@ import Login from './Components/Login/login';
 import './Components/Login/login.css';
 import Logout from './Components/Logout/Logout';
 import Signup from './Components/Signup/Signup';
+import Leaving from './Components/Trending/Leaving';
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -37,6 +38,7 @@ export default function App() {
         <Route path='/movies' element={<Movies/>} exact/>
         <Route path='/tvseries' element={<TvSeries/>} exact/>
         <Route path='/search' element={<Search/>} exact/>
+        <Route path='/leaving' element={<Leaving/>} exact/>
         
         
        </Routes>
