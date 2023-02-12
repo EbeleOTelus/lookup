@@ -22,7 +22,7 @@ const Search = () => {
 
   const fetchSearchData = () => {
 
-    console.log("Search type-------------", type)
+    console.log("Search type-------------", type);
     const options = {
       method: 'GET',
       url: 'https://streaming-availability.p.rapidapi.com/search/ultra',
@@ -68,28 +68,28 @@ const Search = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-     if (keyword.length > 0 ) {
+    if (keyword.length > 0) {
       fetchSearchData();
     }
     else {
-      refreshPage()
+      refreshPage();
     }
   };
 
   // Axios search for movies if type state is set to true
   const submitHandlerMovie = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setType("movie");
   };
 
   // Axios search for movies if type state is set to true
   const submitHandlerSeries = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setType("series");
   };
-  
+
   function refreshPage() {
-    setContent([])
+    setContent([]);
     setKeyword('');
   }
 
@@ -126,19 +126,26 @@ const Search = () => {
       <form className='search-form' >
 
         <input class="searchInput" type="text" placeholder="Enter title here" value={keyword} onChange={onChangeHandler} />
-        <button onClick={submitHandler}>Submit</button>
-      <button onClick={refreshPage}>Reset</button>
-      
-      <button onClick={submitHandlerMovie}>Movies</button>
-      <button onClick={submitHandlerSeries}>TV Shows</button>
+
+        <div class="m-4">
+
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={submitHandlerMovie}>Movies</button>
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={submitHandlerSeries}>TV Shows</button>
+         
+        </div>
+
+
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={submitHandler}>Submit</button>
+
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={refreshPage}>Reset</button>
 
       </form>
-    
+
       <div className="title-css">
         {tvSeriesData}
 
       </div>
- 
+
 
 
     </div>
