@@ -5,8 +5,7 @@ import "./Search.css";
 import axios from "axios";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
 import Button from '../Button/Button';
-import "../Movies/Movies.css";
-import "../Trending/Trending.css";
+
 
 const Search = () => {
 
@@ -14,7 +13,7 @@ const Search = () => {
   const [content, setContent] = useState([]);
   // set search type to movie (true) or series (false) 
   const [type, setType] = useState("movie");
-  const video = require('../video/Search.mp4');
+
   let tvSeriesData = [];
 
   // useEffect(() => {
@@ -55,7 +54,7 @@ const Search = () => {
       .then(function(response) {
         console.log("response.data.results", response.data.results);
         setContent(response.data.results);
-        // console.log("content======", content);
+        console.log("content======", content);
 
       })
       .catch(function(error) {
@@ -153,14 +152,10 @@ const Search = () => {
 
       <div className="title-css">
         {tvSeriesData}
-      <div>
-      <div className="video-background">
-        <video autoPlay muted loop>
-          <source src={video} type="video/mp4" />
-        </video>
+
       </div>
-      </div>
-      </div>
+
+
 
     </div>
   );
