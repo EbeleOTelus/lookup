@@ -13,6 +13,7 @@ const Leaving = () => {
   const [numberOfPages, setNumOfPages] = useState();
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
+  const video = require('../video/LeavingB.mp4');
 
   let leavingData = [];
 
@@ -97,11 +98,11 @@ const Leaving = () => {
         <Page setPage={setPage} numberOfPages={numberOfPages} style={{ color: "blue" }} />
 
       )}
-      {/* <div className="video-background">
+      <div className="video-background">
         <video autoPlay muted loop>
           <source src={video} type="video/mp4" />
         </video>
-      </div> */}
+      </div>
 
     </div>
 

@@ -5,3 +5,9 @@
   flex-direction: row;
 }
 
+.Search {
+  position: relative;
+  z-index: 2;
+
+
+}
