@@ -164,7 +164,7 @@ const TvSeriesContent = ({
 
             <div className="overview" > <strong>OVERVIEW: </strong>{overview}</div>
 
-            <div className="cast" > <strong>CAST: </strong>CAST: {cast.join(", ")} </div>
+            <div className="cast" > <strong>CAST: </strong>{cast.join(", ")} </div>
 
             {/* <div className="genre-modal"> <strong>GENRES: </strong>
               {genreInfo().map((element) => {
