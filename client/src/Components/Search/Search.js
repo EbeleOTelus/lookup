@@ -230,9 +230,9 @@ const Search = () => {
 
         <div className="search-buttons">
 
-          <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autoComplete="off" onClick={submitHandler}>Search</button>
+          <button type="button" class="btn btn-outline-primary search-button" data-bs-toggle="button" autoComplete="off" onClick={submitHandler}>Search</button>
 
-          <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autoComplete="off" onClick={refreshPage}>Reset</button>
+          <button type="button" class="btn btn-outline-primary reset-button" data-bs-toggle="button" autoComplete="off" onClick={refreshPage}>Reset</button>
 
         </div>
 

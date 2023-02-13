@@ -21,8 +21,8 @@ const Leaving = () => {
     method: 'GET',
     url: 'https://streaming-availability.p.rapidapi.com/changes',
     params: {
-      service: 'netflix',
-      country: 'us',
+      service: 'prime, netflix, disney, hbo, paramount, starz, showtime, apple, crave',
+      country: 'ca',
       change_type: 'new',
       type: 'movie',
       output_language: 'en'
@@ -79,8 +79,7 @@ const Leaving = () => {
   }
 
 
-
-
+  // prime, netflix, disney, hbo, paramount, starz, showtime, apple, crave
 
 
 
