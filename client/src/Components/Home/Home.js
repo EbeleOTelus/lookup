@@ -101,7 +101,7 @@ const Home = (props) => {
         </a>
       </div>
 
-  
+      <div className="PageTag"> Most Popular </div>
       <Trending/>
   
 
