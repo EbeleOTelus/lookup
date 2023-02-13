@@ -58,7 +58,7 @@ const LeavingContent = ({
       // console.log("key in TvSeriesContent.js >>> >>> >>>", key);
 
       if (key in serviceInfo) {
-        return <button type="button" class="btn btn-warning btn-lg  btn-large-custom btn3d" style={{ width: "150px", height: "80px" }} ><span class="glyphicon glyphicon-warning-sign"></span> <a key={index} href={streamingInfo[key].us.link} target="_blank" rel="noopener noreferrer"><img src={serviceInfo[key]} alt="" class="streamer-logo" /></a></button>;
+        return <button type="button" class="btn btn-warning btn-lg  btn-large-custom btn3d" style={{ width: "150px", height: "80px" }} ><span class="glyphicon glyphicon-warning-sign"></span> <a key={index} href={streamingInfo[key].ca.link} target="_blank" rel="noopener noreferrer"><img src={serviceInfo[key]} alt="" class="streamer-logo" /></a></button>;
       }
 
       if (!key) {
@@ -114,7 +114,7 @@ const LeavingContent = ({
 
   return (
     <div>
-
+<div className="PageNameTagTv"> Leaving Soon! </div>
       <button type="button" class="btn btn-primary btn-lg btn3d" onClick={handleShow}><span class="glyphicon glyphicon-thumbs-up"></span>
 
         <div className="popular">
