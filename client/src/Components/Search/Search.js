@@ -4,15 +4,38 @@ import Signup from '../Signup/Signup';
 import "./Search.css";
 import axios from "axios";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
-import Button from '../Button/Button';
+// import Button from '../Button/Button';
+import Radio from '@mui/material/Radio';
+
+//radio buttons
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormLabel from '@mui/material/FormLabel';
 
 
+import IconButton from "@mui/material/IconButton";
+// import SearchIcon from "@mui/icons-material/Search";
+import TextField from "@mui/material/TextField";
+
+import { alpha, styled } from '@mui/material/styles';
+
+
+
+//search text field
 const Search = () => {
 
   const [keyword, setKeyword] = useState('');
   const [content, setContent] = useState([]);
   // set search type to movie (true) or series (false) 
   const [type, setType] = useState("movie");
+
+
+  const [value, setValue] = React.useState('');
+  const [error, setError] = React.useState(false);
+  const [helperText, setHelperText] = React.useState('Choose wisely');
+
 
   let tvSeriesData = [];
 
@@ -76,22 +99,12 @@ const Search = () => {
     }
   };
 
-  // Axios search for movies if type state is set to true
-  const submitHandlerMovie = (e) => {
-    e.preventDefault();
-    setType("movie");
-  };
-
-  // Axios search for movies if type state is set to true
-  const submitHandlerSeries = (e) => {
-    e.preventDefault();
-    setType("series");
-  };
 
   function refreshPage() {
     setContent([]);
     setKeyword('');
   }
+
 
   if (content.length > 0) {
 
@@ -116,37 +129,112 @@ const Search = () => {
   }
 
 
+  // // Axios search for movies if type state is set to true
+  // const submitHandlerMovie = (e) => {
+  //   e.preventDefault();
+  //   setType("movie");
+  // };
+
+  // // Axios search for movies if type state is set to true
+  // const submitHandlerSeries = (e) => {
+  //   e.preventDefault();
+  //   setType("series");
+  // };
+
+  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+    setType(event.target.value);
+    setHelperText(' ');
+    setError(false);
+  };
 
 
+  // const CssTextField = styled(TextField)({
+  //   '& label.Mui-focused': {
+  //     color: 'green',
+  //   },
+  //   '& .MuiInput-underline:after': {
+  //     borderBottomColor: 'green',
+  //   },
+  //   '& .MuiOutlinedInput-root': {
+  //     '& fieldset': {
+  //       borderColor: 'red',
+  //     },
+  //     '&:hover fieldset': {
+  //       borderColor: 'yellow',
+  //     },
+  //     '&.Mui-focused fieldset': {
+  //       borderColor: 'green',
+  //     },
+  //   },
+  // });
 
+  // const ValidationTextField = styled(TextField)({
+  //   '& input:valid + fieldset': {
+  //     borderColor: 'green',
+  //     borderWidth: 2,
+  //   },
+  //   '& input:invalid + fieldset': {
+  //     borderColor: 'red',
+  //     borderWidth: 2,
+  //   },
+  //   '& input:valid:focus + fieldset': {
+  //     borderLeftWidth: 6,
+  //     padding: '4px !important', // override inline-style
+  //   },
+  // });
 
   return (
     <div className="Search">
 
       <form className='search-form' >
 
-        <input class="searchInput" type="text" placeholder="Enter title here" value={keyword} onChange={onChangeHandler} />
+        {/* NEW TEXT field */}
 
+        <div>
+          <TextField
+            id="search-bar"
+            className="text"
+            onChange={onChangeHandler}
+            value={keyword}
+            label="Enter title"
+            variant="outlined"
+            placeholder="Search..."
+            size="medium"
+          />
 
-{/* 
-
-      <input onChange={submitHandlerMovie} type="radio" name="movie" value="movie" /> Movies
-      <input onChange={submitHandlerSeries} type="checkbox" name="series" value="series" /> TV Shows
- */}
-
-
-
-        <div class="m-4">
-
-          <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={submitHandlerMovie}>Movies</button>
-          <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={submitHandlerSeries}>TV Shows</button>
-         
         </div>
 
 
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={submitHandler}>Submit</button>
 
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" onClick={refreshPage}>Reset</button>
+        <div className="radio-div">
+
+          {/* Radio buttons= */}
+
+          <FormControl sx={{ m: 3 }} error={error} variant="standard" className="search-radio">
+            <FormLabel id="demo-error-radios"></FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-error-radios"
+              name="type"
+              value={value}
+              onChange={handleRadioChange}
+            >
+              <FormControlLabel value="movie" control={<Radio />} label="Movie" />
+              <FormControlLabel value="series" control={<Radio />} label="TV show" />
+            </RadioGroup>
+
+          </FormControl>
+
+        </div>
+
+
+        <div className="search-buttons">
+
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autoComplete="off" onClick={submitHandler}>Search</button>
+
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autoComplete="off" onClick={refreshPage}>Reset</button>
+
+        </div>
 
       </form>
 
