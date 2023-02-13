@@ -45,9 +45,7 @@ const Leaving = () => {
     url: 'https://streaming-availability.p.rapidapi.com/changes',
 
     params: {
-
       service: 'netflix',
-
       country: 'ca',
 
       change_type: 'new',
