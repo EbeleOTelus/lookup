@@ -16,13 +16,17 @@
 }
 
 .popular:hover {
-  opacity: 0.7;
+  opacity: 0.2;
 }
 
 @media (max-width: 550px) {
   .popular {
     width: 50%;
   }
+}
+
+#title-button:hover {
+  opacity: 02;
 }
 
 .poster {

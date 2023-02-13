@@ -28,7 +28,6 @@ const Header = (props) => {
         TvHaven</span>
       <div className='loginClass'>
 
-
         {/* <a href="/login">Login🎬</a> */}
         <div>
           {isLoggedIn && <Link onClick={handleLogout} to="/login">Logout</Link>}

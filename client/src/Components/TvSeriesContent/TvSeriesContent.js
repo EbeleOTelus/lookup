@@ -117,7 +117,7 @@ const TvSeriesContent = ({
   return (
     < div>
 
-      <button type="button" class="btn btn-primary btn-lg btn3d" onClick={handleShow}><span class="glyphicon glyphicon-thumbs-up"></span>
+      <button type="button" class="btn btn-primary btn-lg btn3d" id="title-button" onClick={handleShow}><span class="glyphicon glyphicon-thumbs-up"></span>
 
         <div className="popular">
 
