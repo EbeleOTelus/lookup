@@ -13,6 +13,9 @@ const Leaving = () => {
   const [numberOfPages, setNumOfPages] = useState();
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
+  const [type, setType] = useState('movie');
+  const [streamer, setStreamer] = useState('netflix');
+
   const video = require('../video/LeavingB.mp4');
 
   let leavingData = [];
@@ -21,10 +24,10 @@ const Leaving = () => {
     method: 'GET',
     url: 'https://streaming-availability.p.rapidapi.com/changes',
     params: {
-      service: 'prime, netflix, disney, hbo, paramount, starz, showtime, apple, crave',
+      service: `${streamer}`,
       country: 'ca',
       change_type: 'new',
-      type: 'movie',
+      type: `${type}`,
       output_language: 'en'
     },
     headers: {
