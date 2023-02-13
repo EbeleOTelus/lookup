@@ -14,14 +14,14 @@ You may also see any lint errors in the console.
 !["4 PANEL VIEW"](https://github.com/Aminadft/scheduler-dashboard/blob/master/public/docs/dashboard.PNG?raw=true)
 
 ## Dependencies
--React
--Express server
--CSS
--Bootstrap
--APIs
--Material UI
--Node.js
--Axios
+- React
+- Express server
+- CSS
+-- Bootstrap
+- APIs
+- Material UI
+- Node.js
+- Axios
 
 ## Setup
 Install dependencies with npm install.
