@@ -86,7 +86,7 @@ const Leaving = () => {
 
   return (
     <div>
-
+      <div className="PageNameTagTv"> Leaving Soon </div>
       <div className="title-css">
         {leavingData}
 

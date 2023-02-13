@@ -10,6 +10,7 @@ import "./Movies.css";
 
 
 
+
 const Movies = () => {
 
   const [page, setPage] = useState(1);
@@ -83,7 +84,7 @@ const Movies = () => {
   return (
 
     <div>
-
+      <div className="PageNameTag"> Movies </div>
       <div className="title-css">
         {tvMoviesData}
 

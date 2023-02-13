@@ -87,6 +87,7 @@ const TvSeries = () => {
   return (
 
     <div>
+      <div className="PageNameTagTv"> Tv Shows </div>
 
       <div className="title-css">
         {tvSeriesData}
