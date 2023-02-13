@@ -21,3 +21,15 @@
   pause: "false"
 }
 
+.PageTag {
+  display: flex;
+  justify-content: center;
+  /* position: fixed; */
+  z-index: 1;
+  font-size: xx-large;
+  font-weight: 800;
+  margin-top: 70px;
+  margin-left: 58px;
+ 
+
+}
