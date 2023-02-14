@@ -18,7 +18,7 @@ const Genres = (
       .catch((error) =>{
         console.log(error);
       })
-    // setGenres(data["genres"]);
+  
   };
   useEffect(() => {
     fetchGenres();

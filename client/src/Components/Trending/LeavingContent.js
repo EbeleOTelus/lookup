@@ -40,7 +40,7 @@ const LeavingContent = ({
 
   const streamingInformation = () => {
     const objectKeys = Object.keys(streamingInfo);
-    // console.log("##2", objectKeys);
+  
 
     const serviceInfo = {
       prime: prime,
@@ -55,7 +55,7 @@ const LeavingContent = ({
     };
 
     const links = objectKeys.map((key, index) => {
-      // console.log("key in TvSeriesContent.js >>> >>> >>>", key);
+     
 
       if (key in serviceInfo) {
         return <button type="button" class="btn btn-warning btn-lg  btn-large-custom btn3d" style={{ width: "150px", height: "80px" }} ><span class="glyphicon glyphicon-warning-sign"></span> <a key={index} href={streamingInfo[key].ca.link} target="_blank" rel="noopener noreferrer"><img src={serviceInfo[key]} alt="" class="streamer-logo" /></a></button>;
@@ -76,7 +76,6 @@ const LeavingContent = ({
     const genInfo = { "1": "Biography", "10402": "Music", "10749": "Romance", "10751": "Family", "10752": "War", "10763": "News", "10764": "Reality", "10767": "Talk Show", "12": "Adventure", "14": "Fantasy", "16": "Animation", "18": "Drama", "2": "Film Noir", "27": "Horror", "28": "Action", "3": "Game Show", "35": "Comedy", "36": "History", "37": "Western", "4": "Musical", "5": "Sport", "53": "Thriller", "6": "Short", "7": "Adult", "80": "Crime", "878": "Science Fiction", "9648": "Mystery", "99": "Documentary" };
 
     const genreArr = objectValues.map((key, index) => {
-      console.log("genrekey in TvSeriesContent.js >>> >>> >>>", key);
 
       if (key in genInfo) {
 
@@ -88,30 +87,13 @@ const LeavingContent = ({
         return <div> Not available in any streaming service</div>;
       }
     });
-    console.log("tvseriescontent genreArr ==== ", genreArr);
+   
     return genreArr;
   };
 
-  // console.log("tvseriescontent genreInfo------------------------------- ", genreInfo());
+ 
 
-
-  // const streamerLogo = () => {
-  //   if (streamingInformation === 'netflix') {
-  //     return <img src={netflix} alt=""> NETFLIX </img>
-  //   }
-  //   if (streamingInformation === 'netflix') {
-  //     return <img src={netflix} alt=""> NETFLIX </img>
-  //   } 
-
-
-  // }
-
-  // const streamingInformation = streamingInfo.map((info, index) => {
-  //   return index;
-  // });
-
-  // const myStyle = { border: "0px", opacity: "1", margin: "0px", padding: "0px", position: "relative" };
-
+ 
   return (
     <div>
 <div className="PageNameTagTv"> Leaving Soon! </div>

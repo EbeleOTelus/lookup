@@ -25,7 +25,7 @@ const Login = (props) => {
         // response.session.userId = user.id;
         console.log("user-----", user)
         props.setIsLoggedIn(true)
-        // props.setEmail(email);
+       
         setError('');
         navigate("/");
       } else {

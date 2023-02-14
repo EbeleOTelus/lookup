@@ -1,14 +1,4 @@
-/* .home {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  flex-direction: row;
-}
 
-.d-block {
-  margin-top: 150px;
-  border-radius: 15%;
-} */
 
 
 .home-component {
@@ -25,7 +15,7 @@
 .PageTag {
   display: flex;
   justify-content: center;
-  /* position: fixed; */
+ 
   z-index: 1;
   font-size: xx-large;
   font-weight: 800;

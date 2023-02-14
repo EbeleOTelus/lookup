@@ -167,54 +167,19 @@ const Leaving = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
 
     <div>
-
-
-
 
       <div className="title-css">
 
         {leavingData}
 
-
-
-
       </div>
-
-
-
 
       {numberOfPages > 1 && (
 
-
-
-
         <Page setPage={setPage} numberOfPages={numberOfPages} style={{ color: "blue" }} />
-
-
-
 
       )}
 

@@ -28,7 +28,7 @@ const Search = () => {
 
   const [keyword, setKeyword] = useState('');
   const [content, setContent] = useState([]);
-  // set search type to movie (true) or series (false) 
+   
   const [type, setType] = useState("movie");
 
 
@@ -39,9 +39,7 @@ const Search = () => {
 
   let tvSeriesData = [];
 
-  // useEffect(() => {
-  //   fetchSearchData();
-  // }, [keyword]);
+  
 
   const fetchSearchData = () => {
 
@@ -129,17 +127,7 @@ const Search = () => {
   }
 
 
-  // // Axios search for movies if type state is set to true
-  // const submitHandlerMovie = (e) => {
-  //   e.preventDefault();
-  //   setType("movie");
-  // };
-
-  // // Axios search for movies if type state is set to true
-  // const submitHandlerSeries = (e) => {
-  //   e.preventDefault();
-  //   setType("series");
-  // };
+  
 
   const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -149,40 +137,8 @@ const Search = () => {
   };
 
 
-  // const CssTextField = styled(TextField)({
-  //   '& label.Mui-focused': {
-  //     color: 'green',
-  //   },
-  //   '& .MuiInput-underline:after': {
-  //     borderBottomColor: 'green',
-  //   },
-  //   '& .MuiOutlinedInput-root': {
-  //     '& fieldset': {
-  //       borderColor: 'red',
-  //     },
-  //     '&:hover fieldset': {
-  //       borderColor: 'yellow',
-  //     },
-  //     '&.Mui-focused fieldset': {
-  //       borderColor: 'green',
-  //     },
-  //   },
-  // });
-
-  // const ValidationTextField = styled(TextField)({
-  //   '& input:valid + fieldset': {
-  //     borderColor: 'green',
-  //     borderWidth: 2,
-  //   },
-  //   '& input:invalid + fieldset': {
-  //     borderColor: 'red',
-  //     borderWidth: 2,
-  //   },
-  //   '& input:valid:focus + fieldset': {
-  //     borderLeftWidth: 6,
-  //     padding: '4px !important', // override inline-style
-  //   },
-  // });
+  
+  
 
   return (
     <div className="Search">

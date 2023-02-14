@@ -19,7 +19,7 @@ const Header = (props) => {
 
     auth.clear();
     navigate("/login");
-    // setIsLoggedIn(isLoggedIn);
+    
 
   };
   return (
@@ -28,7 +28,7 @@ const Header = (props) => {
         TvHaven</span>
       <div className='loginClass'>
 
-        {/* <a href="/login">Login🎬</a> */}
+        
         <div>
           {isLoggedIn && <Link onClick={handleLogout} to="/login">Logout</Link>}
           {!isLoggedIn && <Link to="/login">Login🎬</Link>}
