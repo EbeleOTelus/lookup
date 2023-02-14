@@ -106,7 +106,7 @@ const LeavingContent = ({
             src={posterURLs} alt={title} />
           <p className="title">{title}</p>
           <span className="media_type" href={imdbLink}>
-            IMDB Rating: {imdbRating}
+          ⭐ Rating: {imdbRating/10}
             <span className="media_type">{year}</span>
           </span>
         </div>
