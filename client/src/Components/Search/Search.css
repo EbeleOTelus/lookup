@@ -8,7 +8,8 @@
   position: relative;
   z-index: 1;
   background-color: rgb(128, 132, 247);
-  background-image: linear-gradient(rgb(238, 117, 117), rgb(232, 232, 163));
+  background-image: "https://images.hdqwalls.com/download/movie-wall-e-ad-3840x2160.jpg";
+  /* linear-gradient(rgb(238, 117, 117), rgb(232, 232, 163)); */
   width: 100%;
 
 

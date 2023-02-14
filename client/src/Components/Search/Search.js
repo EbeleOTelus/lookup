@@ -242,7 +242,7 @@ const Search = () => {
         {tvSeriesData}
 
       </div>
-
+<img src="https://images.hdqwalls.com/download/movie-wall-e-ad-3840x2160.jpg"></img>
 
 
     </div>

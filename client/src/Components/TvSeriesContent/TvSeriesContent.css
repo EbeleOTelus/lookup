@@ -16,7 +16,8 @@
 }
 
 .popular:hover {
-  opacity: 0.2;
+  color: #FFF7D6;
+  background-color:#462850;
 }
 
 @media (max-width: 550px) {
@@ -26,7 +27,8 @@
 }
 
 #title-button:hover {
-  opacity: 02;
+  
+  background-color:#462850;
 }
 
 .poster {
@@ -43,7 +45,7 @@
   padding: 8px 0;
   word-wrap: break-word;
   overflow: hidden;
-  text-overflow: ;
+  text-overflow:inherit;
   white-space: pre-wrap;
 }
 
