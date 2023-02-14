@@ -25,6 +25,7 @@
 .trendingStyle:hover {
   background-color:#462850;
   color: #FFF7D6;
+  opacity: 0.7;
 }
 
 @media (max-width: 550px) {
