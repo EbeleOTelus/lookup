@@ -1,11 +1,12 @@
 .Header-box{
   width: 100%;
   cursor: pointer;
-  height: 120px;
+  height: 130px;
   position: fixed;
   display: flex;
   justify-content: space-between;
-  background-image: linear-gradient(to left, rgb(3, 0, 10) , rgb(7, 23, 76));
+  background-image: linear-gradient(to left, #462850, #1d3668);
+  /* background-image: linear-gradient(to left, #06222f , #452d43); */
   font-family: Montserrat,sans-serif;
   font-size: 5vw;
   

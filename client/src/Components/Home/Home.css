@@ -14,11 +14,12 @@
 .home-component {
   display: flex;
   flex-direction: column;
+  margin-top: 0px;
 }
 
 .carousel {
   height: 10vh;
-  pause: "false"
+  pause: "true";
 }
 
 .PageTag {
@@ -30,6 +31,7 @@
   font-weight: 800;
   margin-top: 0px;
   margin-bottom: 0px;
+  
   
  
 

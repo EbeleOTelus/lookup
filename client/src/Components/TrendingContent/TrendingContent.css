@@ -15,7 +15,7 @@
 
   padding: 5px;
   margin: 5px 0;
-  background-color:rgb(61, 88, 115);
+  background-color:#28498a;
   border-radius: 10px;
   position:relative;
   font-family: Montserrat, sans-serif;
@@ -23,8 +23,8 @@
 }
 
 .trendingStyle:hover {
-  background-color:rgb(84, 84, 242);
-  color: black;
+  background-color:#462850;
+  color: #FFF7D6;
 }
 
 @media (max-width: 550px) {
