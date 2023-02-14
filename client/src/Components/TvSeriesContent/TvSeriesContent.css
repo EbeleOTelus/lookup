@@ -64,7 +64,7 @@
 
 }
 
-.modal-header {
+.modal-top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -72,6 +72,11 @@
   background: #dde1e7;
   border-radius: 20px;
   margin: 20px;
+  width: 100%;
+  margin-left: 8px;
+  margin-right: px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 
@@ -94,7 +99,7 @@
 
 .modalTitle {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   font-size: 30px;
   font-weight:700;

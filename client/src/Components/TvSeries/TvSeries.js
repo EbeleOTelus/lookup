@@ -6,6 +6,7 @@ import Genres from "../Page/Genres";
 import Page from "../Page/Page";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
 import "./TvSeries.css";
+import "../TvSeriesContent/TvSeriesContent.css";
 
 
 

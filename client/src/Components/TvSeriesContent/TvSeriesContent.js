@@ -57,7 +57,7 @@ const TvSeriesContent = ({
     };
 
     // let leaving;
-    
+
     const links = objectKeys.map((key, index) => {
       // console.log("key in TvSeriesContent.js >>> >>> >>>", key);
 
@@ -121,7 +121,7 @@ const TvSeriesContent = ({
             src={posterURLs} alt={title} />
           <p className="title">{title}</p>
           <span className="media_type" href={imdbLink}>
-          ⭐ Rating: {imdbRating/10}
+            ⭐ Rating: {imdbRating / 10}
             <span className="media_type">{year}</span>
           </span>
         </div>
@@ -134,26 +134,31 @@ const TvSeriesContent = ({
       <Modal show={show} onHide={handleClose} size="lg"
         centered className="tv-box" width="900px">
 
-        <Modal.Header >
-
-          <Modal.Title className="modalTitle">{title}</Modal.Title>
-
-          {streamingInformation().map((element) => {
-            return element;
-          })}
-          {/* <div>{leaving}</div> */}
-
-          {/* 
-            <div className="modalHeaderLeft">
 
 
+        <Modal.Header>
+          <div className="modal-top">
+            <Modal.Title className="modalTitle">{title}</Modal.Title>
 
-            </div> */}
+            {streamingInformation().map((element) => {
+              return element;
+            })}
+            {/* <div>{leaving}</div> */}
+
+            {/* 
+  <div className="modalHeaderLeft">
 
 
 
+  </div> */}
+
+
+          </div>
 
         </Modal.Header>
+
+
+
 
         <Modal.Body>
           <div className="modalBod">
