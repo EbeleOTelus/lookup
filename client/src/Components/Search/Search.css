@@ -7,8 +7,8 @@
   padding-top: 50px;
   position: relative;
   z-index: 1;
-  background-color: rgb(128, 132, 247);
-  background-image: linear-gradient(rgb(238, 117, 117), rgb(232, 232, 163));
+  background-color: #c0adfe;
+  /* background-image: linear-gradient(rgb(238, 117, 117), rgb(255, 250, 222)); */
   width: 100%;
 
 
@@ -19,11 +19,30 @@
   border-color: rgb(255, 0, 195);
 } */
 
-.search-button {
+.search-buttons {
+  display: flex;
+  justify-content: center;
+ 
+  /* height: 50px;
+  width: 180px;
+  font-size: 26px;
+  margin: 10px; */
+}
 
+.search-button {
   height: 50px;
   width: 180px;
   font-size: 26px;
+  margin: 10px;
+}
+
+.reset-button {
+  height: 50px;
+  width: 180px;
+  font-size: 26px;
+  margin: 10px;
+  /* color: #1c1020 */
+  
 }
 
 /* 

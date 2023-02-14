@@ -6,6 +6,7 @@ import axios from "axios";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
 // import Button from '../Button/Button';
 import Radio from '@mui/material/Radio';
+// const walle = '../images/movie-wall-e.jpg';
 
 //radio buttons
 import RadioGroup from '@mui/material/RadioGroup';
@@ -243,6 +244,7 @@ const Search = () => {
 
       </div>
 
+      <img className="d-block w-100" src={"https://images.hdqwalls.com/download/movie-wall-e-ad-3840x2160.jpg"} alt="" />
 
 
     </div>
