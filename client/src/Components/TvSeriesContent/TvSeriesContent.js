@@ -121,7 +121,7 @@ const TvSeriesContent = ({
             src={posterURLs} alt={title} />
           <p className="title">{title}</p>
           <span className="media_type" href={imdbLink}>
-            ⭐Rating: {imdbRating/10}
+          ⭐ Rating: {imdbRating/10}
             <span className="media_type">{year}</span>
           </span>
         </div>

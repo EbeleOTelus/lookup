@@ -20,11 +20,30 @@
   border-color: rgb(255, 0, 195);
 } */
 
-.search-button {
+.search-buttons {
+  display: flex;
+  justify-content: center;
+ 
+  /* height: 50px;
+  width: 180px;
+  font-size: 26px;
+  margin: 10px; */
+}
 
+.search-button {
   height: 50px;
   width: 180px;
   font-size: 26px;
+  margin: 10px;
+}
+
+.reset-button {
+  height: 50px;
+  width: 180px;
+  font-size: 26px;
+  margin: 10px;
+  /* color: #1c1020 */
+  
 }
 
 /* 
