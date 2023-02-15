@@ -26,7 +26,7 @@ const Signup = () => {
         const user = await response.json();
         // Save the user data to local storage or Redux store
         setError('');
-        // navigate('/signup')
+        navigate("/")
       } else {
         setError('Something went wrong, please try again');
       }
@@ -42,6 +42,7 @@ const Signup = () => {
         <input
           type="text"
           id="firstname"
+          placeholder="First Name"
           value={firstname}
           onChange={(e) => setFirstname(e.target.value)}
         />
@@ -51,6 +52,7 @@ const Signup = () => {
         <input
           type="text"
           id="lastname"
+          placeholder="Last Name"
           value={lastname}
           onChange={(e) => setLastname(e.target.value)}
         />
@@ -60,6 +62,7 @@ const Signup = () => {
         <input
           type="email"
           id="email"
+          placeholder="Enter Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -69,6 +72,7 @@ const Signup = () => {
         <input
           type="password"
           id="password"
+          placeholder="Enter Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />

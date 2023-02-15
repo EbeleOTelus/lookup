@@ -23,11 +23,13 @@ const Login = (props) => {
         const user = await response.json();
         // Save the user data to local storage or Redux store
         // response.session.userId = user.id;
-        console.log("user-----", user)
+        // console.log("user-----", user)
         props.setIsLoggedIn(true)
        
         setError('');
         navigate("/");
+        setEmail('');
+        setPassword('');
       } else {
         setError('Incorrect email or password');
       }
@@ -43,6 +45,7 @@ const Login = (props) => {
         <input
           type="text"
           id="email"email
+          placeholder="Enter Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -52,6 +55,7 @@ const Login = (props) => {
         <input
           type="password"
           id="password"
+          placeholder="Enter Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
