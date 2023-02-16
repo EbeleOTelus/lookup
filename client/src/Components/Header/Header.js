@@ -30,10 +30,10 @@ const Header = (props) => {
 
         
         <div>
-          {isLoggedIn && <Link onClick={handleLogout} to="/login">Logout</Link>}
-          {!isLoggedIn && <Link to="/login">Login🎬</Link>}
+          {isLoggedIn && <Link className="logoutLink" onClick={handleLogout} to="/login">Logout</Link>}
+          {!isLoggedIn && <Link  className="loginLink" to="/login">Login</Link>}
           
-        {!isLoggedIn && <Link to="/signup">SignUp</Link>}
+        {!isLoggedIn && <Link  className="signupLink"to="/signup">SignUp</Link>}
         </div>
 
       </div >
