@@ -40,6 +40,8 @@ const TvSeriesContent = ({
 
   // console.log("##1", streamingInfo);
 
+  let leaving = "";
+
   const streamingInformation = () => {
     const objectKeys = Object.keys(streamingInfo);
     console.log("##2", objectKeys);
@@ -56,7 +58,7 @@ const TvSeriesContent = ({
       crave: crave
     };
 
-    // let leaving;
+    
 
     const links = objectKeys.map((key, index) => {
       // console.log("key in TvSeriesContent.js >>> >>> >>>", key);
@@ -64,11 +66,11 @@ const TvSeriesContent = ({
 
       if (key in serviceInfo) {
 
-        // if (streamingInfo[key].ca.leaving > 0) {
-        //   const streamer = key.charAt(0).toUpperCase() + key.slice(1);
-        //   const leavingDate = new Date(streamingInfo[key].ca.leaving * 1000).toLocaleString();
-        //   leaving = `Leaving ${streamer} on ${leavingDate}`;
-        // }
+        if (streamingInfo[key].ca.leaving > 0) {
+          const streamer = key.charAt(0).toUpperCase() + key.slice(1);
+          const leavingDate = new Date(streamingInfo[key].ca.leaving * 1000).toLocaleString();
+          leaving = `Leaving ${streamer} on ${leavingDate}`;
+        }
 
         return <button type="button" class="btn btn-warning btn-lg  btn-large-custom btn3d" style={{ width: "150px", height: "80px" }} ><span class="glyphicon glyphicon-warning-sign"></span> <a key={index} href={streamingInfo[key].ca.link} target="_blank" rel="noopener noreferrer"><img src={serviceInfo[key]} alt="" class="streamer-logo" /></a></button>;
 
@@ -128,6 +130,7 @@ const TvSeriesContent = ({
 
 
       </button>
+      
 
 
 
@@ -140,10 +143,14 @@ const TvSeriesContent = ({
           <div className="modal-top">
             <Modal.Title className="modalTitle">{title}</Modal.Title>
 
+            <div>
+
             {streamingInformation().map((element) => {
               return element;
             })}
-            {/* <div>{leaving}</div> */}
+
+            </div>
+            <div>{leaving}</div>
 
             {/* 
   <div className="modalHeaderLeft">
