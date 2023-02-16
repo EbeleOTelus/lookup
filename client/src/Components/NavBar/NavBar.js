@@ -2,10 +2,10 @@ import * as React from 'react';
 import "./NavBar.css"
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import HomeIcon from '@mui/icons-material/Home';
-import WhatshotIcon from '@mui/icons-material/Whatshot';
-import MovieIcon from '@mui/icons-material/Movie';
-import TvIcon from '@mui/icons-material/Tv';
+// import HomeIcon from '@mui/icons-material/Home';
+// import WhatshotIcon from '@mui/icons-material/Whatshot';
+// import MovieIcon from '@mui/icons-material/Movie';
+// import TvIcon from '@mui/icons-material/Tv';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate, useLocation } from 'react-router-dom'; 
 
@@ -68,13 +68,14 @@ export default function NavBar() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Home" icon={<HomeIcon onClick={() => navigate("/")}/>} />
+        <BottomNavigationAction label="Home" style={{ color: "#FFFADE" }} onClick={() => navigate("/")} />
         {/* <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Most Popular" icon={<WhatshotIcon onClick={() => navigate("/trending")}/>} /> */}
-        <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Movies" icon={<MovieIcon onClick={() => navigate("/movies")}/>} />
-        <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Tv Shows" icon={<TvIcon onClick={() => navigate("/tvseries")}/>} />
-        <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Search" icon={<SearchIcon onClick={() => {navigate("/search"); setValue(3)}}/>} />
-        <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Leaving Soon" icon={<WhatshotIcon onClick={() => {navigate("/leaving"); setValue(4)}}/>} />
+        <BottomNavigationAction label="Movies" style={{ color: "#FFFADE" }}onClick={() => navigate("/movies")} />
+        <BottomNavigationAction label="Tv Shows" style={{ color: "#FFFADE" }}onClick={() => navigate("/tvseries")} />
+        <BottomNavigationAction  label="Search"  style={{ color: "#FFFADE" }} onClick={() => {navigate("/search"); setValue(3)}} />
+        <BottomNavigationAction label="Leaving Soon"  style={{ color: "#FFFADE" }} onClick={() => {navigate("/leaving"); setValue(4)}} />
       </BottomNavigation>
    
   );
 }
+// class="bottomnav-titles" 
