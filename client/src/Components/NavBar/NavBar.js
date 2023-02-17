@@ -76,7 +76,7 @@ export default function NavBar() {
       >
         <BottomNavigationAction label="Home" style={{ color: "#FFFADE" }} onClick={() => navigate("/")} />
         {/* <BottomNavigationAction style={{ color: "beige", background: "black"  }} label="Most Popular" icon={<WhatshotIcon onClick={() => navigate("/trending")}/>} /> */}
-        <BottomNavigationAction label="Movies" style={{ color: "#FFFADE" }}onClick={() => navigate("/movies")} />
+        <BottomNavigationAction label="Movies" style={{ color: "#FFFADE" }}  size="large"onClick={() => navigate("/movies")} />
         <BottomNavigationAction label="Tv Shows" style={{ color: "#FFFADE" }}onClick={() => navigate("/tvseries")} />
         <BottomNavigationAction  label="Search"  style={{ color: "#FFFADE" }} onClick={() => {navigate("/search"); setValue(3)}} />
         <BottomNavigationAction label="Leaving Soon"  style={{ color: "#FFFADE" }} onClick={() => {navigate("/leaving"); setValue(4)}} />

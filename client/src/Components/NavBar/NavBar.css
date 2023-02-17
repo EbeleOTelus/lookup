@@ -8,11 +8,12 @@
   background-image: linear-gradient(to right, #462850, #1d3668);
   z-index: 50;
   height: 50px;
+  font-size: 100px!important;
 
 }
 
 .Mui-selected {
-  background-color: rgb(61, 107, 235);
+  background-color: rgb(128, 132, 247);
   color: black;
   border: none;
 }
@@ -25,4 +26,8 @@
   background: none;
   border: none;
 
+}
+
+.css-imwso6-MuiBottomNavigationAction-label {
+  font-size: 1.3rem!important;
 }
