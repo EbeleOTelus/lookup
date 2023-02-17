@@ -41,10 +41,8 @@ const Page = ({ setPage, numberOfPages = 10 }) => {
     >
       <ThemeProvider theme={theme}>
         <Pagination sx={{ button: { color: '#ffffff' } }} count={numberOfPages} onChange={(e) => handlePageChange(e.target.textContent)}
-
           color='secondary'
         />
-
       </ThemeProvider>
     </div>
   );

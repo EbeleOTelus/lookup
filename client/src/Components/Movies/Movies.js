@@ -1,5 +1,3 @@
-
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Genres from "../Page/Genres";
@@ -7,8 +5,6 @@ import Page from "../Page/Page";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
 import "../TvSeries/TvSeries.css";
 import "./Movies.css";
-
-
 
 
 const Movies = () => {
@@ -19,6 +15,7 @@ const Movies = () => {
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
   const video = require('../video/movie.mp4');
+
   let tvMoviesData = [];
 
   const options = {
@@ -44,7 +41,6 @@ const Movies = () => {
     }
   };
 
-
   useEffect(() => {
     const fetchMovies = () => {
       axios.request(options).then(function(response) {
@@ -60,9 +56,7 @@ const Movies = () => {
   }, [page]);
 
   if (content.length > 0) {
-
     tvMoviesData = content.map((c, id) => (
-
       <TvSeriesContent
         key={id}
         age={c.age}
@@ -82,17 +76,13 @@ const Movies = () => {
   }
 
   return (
-
     <div>
       <div className="PageNameTag"> Movies </div>
       <div className="title-css">
         {tvMoviesData}
-
       </div>
       {numberOfPages > 1 && (
-
         <Page setPage={setPage} numberOfPages={numberOfPages} variant="outlined" color="secondary" />
-
       )}
       <div className="video-background">
         <video autoPlay muted loop>
@@ -100,12 +90,7 @@ const Movies = () => {
         </video>
       </div>
     </div>
-
-
   );
-
 };
 
 export default Movies;
-
-

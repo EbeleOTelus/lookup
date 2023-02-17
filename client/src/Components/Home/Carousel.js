@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -11,11 +10,9 @@ export function Carousel() {
 
   // Get the trending move information from themoviedb API
   useEffect(() => {
-
     axios.get(
       `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}`
     ).then((result) => {
-      // setData(result.data.results);
       const dataWithImages = result.data.results.map((item) => {
         let image = `https://image.tmdb.org/t/p/w300${item.backdrop_path}`;
         const itemWithImage = { ...item, image };
@@ -46,7 +43,6 @@ export function Carousel() {
             </div>
           ))
         }
-
 
         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>

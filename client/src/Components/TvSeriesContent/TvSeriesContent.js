@@ -109,4 +109,3 @@ const TvSeriesContent = ({
 };
 
 export default TvSeriesContent;
-

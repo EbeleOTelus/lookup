@@ -7,17 +7,14 @@ const Logout = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Perform any necessary logout logic here, such as clearing local storage or making a API call
+    // logout logic
     localStorage.clear();
     navigate("/login");
 
   };
 
-
-
   return (
     <form>
-
     </form>
   );
 };

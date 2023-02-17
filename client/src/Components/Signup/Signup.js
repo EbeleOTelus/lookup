@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./Signup.css";
 
 
 const Signup = () => {
@@ -14,6 +15,7 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+
     try {
       // Replace this with your signup logic
       const response = await fetch('/auth/signup', {
@@ -26,6 +28,7 @@ const Signup = () => {
         const user = await response.json();
         // Save the user data to local storage or Redux store
         setError('');
+        navigate("/");
         navigate("/");
       } else {
         setError('Something went wrong, please try again');

@@ -17,7 +17,6 @@ const greenCheckMark = require('../images/green-check-mark-icon-transparent-back
 
 
 const LeavingContent = ({
-
   age,
   cast,
   countries,
@@ -37,11 +36,8 @@ const LeavingContent = ({
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
   const streamingInformation = () => {
     const objectKeys = Object.keys(streamingInfo);
-
-
     const serviceInfo = {
       prime: prime,
       netflix: netflix,
@@ -76,17 +72,14 @@ const LeavingContent = ({
     const genInfo = { "1": "Biography", "10402": "Music", "10749": "Romance", "10751": "Family", "10752": "War", "10763": "News", "10764": "Reality", "10767": "Talk Show", "12": "Adventure", "14": "Fantasy", "16": "Animation", "18": "Drama", "2": "Film Noir", "27": "Horror", "28": "Action", "3": "Game Show", "35": "Comedy", "36": "History", "37": "Western", "4": "Musical", "5": "Sport", "53": "Thriller", "6": "Short", "7": "Adult", "80": "Crime", "878": "Science Fiction", "9648": "Mystery", "99": "Documentary" };
 
     const genreArr = objectValues.map((key, index) => {
-
       if (key in genInfo) {
-
         return <div key={index} >&nbsp;&nbsp;{genInfo[key]}&nbsp;&nbsp;</div>;
-
       }
-
       if (!key) {
         return <div> Not available in any streaming service</div>;
       }
     });
+
 
     return genreArr;
   };
@@ -94,83 +87,54 @@ const LeavingContent = ({
 
 
 
+
   return (
     <div>
       <div className="PageNameTagTv"> Leaving Soon! </div>
+      <div className="PageNameTagTv"> Leaving Soon! </div>
       <button type="button" class="btn btn-primary btn-lg btn3d" onClick={handleShow}><span class="glyphicon glyphicon-thumbs-up"></span>
-
         <div className="popular">
-
-
           <img className="poster"
             src={posterURLs} alt={title} />
           <p className="title">{title}</p>
           <span className="media_type" href={imdbLink}>
             ⭐ Rating: {imdbRating / 10}
+            ⭐ Rating: {imdbRating / 10}
             <span className="media_type">{year}</span>
           </span>
         </div>
-
-
       </button>
-
-
 
       <Modal show={show} onHide={handleClose} size="lg"
         centered className="tv-box" width="900px">
-
         <Modal.Header >
-
           <Modal.Title className="modalTitle">{title}</Modal.Title>
-
           {streamingInformation().map((element) => {
             return element;
           })}
-
-          {/* 
-            <div className="modalHeaderLeft">
-
-
-
-            </div> */}
-
-
-
 
         </Modal.Header>
 
         <Modal.Body>
           <div className="modalBod">
-
             <div className="overview" > <strong>OVERVIEW: </strong>{overview}</div>
-
             <div className="cast" > <strong>CAST: </strong>CAST: {cast.join(", ")} </div>
-
             <div className="genre-modal"> <strong>GENRES: </strong>
               {genreInfo().map((element) => {
                 return element;
               })}
             </div>
-
           </div>
-
           <iframe className="trailer-video" width="100%" height="315" src={`https://www.youtube.com/embed/${video}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </Modal.Body>
 
         <Modal.Footer>
-
           <button type="button" class="btn btn-warning btn-lg btn-large-custom btn3d" style={{ width: "150px", height: "80px" }} ><span class="glyphicon glyphicon-warning-sign"></span>
-
             <a href={`https://www.imdb.com/title/${imdbID}`} target="_blank" rel="noreferrer">
               <img height="50px" src={"https://m.media-amazon.com/images/G/01/IMDb/BG_rectangle._CB1509060989_SY230_SX307_AL_.png"} alt="Coding Beauty logo"></img>
             </a>
-
           </button>
-
-
-
           <button type="button" class="btn btn-warning btn-lg btn-large-custom btn3d" onClick={handleClose} style={{ width: "60px", height: "60px" }}  ><span class="glyphicon glyphicon-off"></span><img src="http://clipart-library.com/images_k/green-check-mark-icon-transparent-background/green-check-mark-icon-transparent-background-24.png" alt="" style={{ width: "30px" }} ></img></button>
-
         </Modal.Footer>
       </Modal>
     </div>

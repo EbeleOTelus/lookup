@@ -12,7 +12,7 @@ const Login = (props) => {
     event.preventDefault();
 
     try {
-      // Replace this with your authentication logic
+      // authentication logic
       const response = await fetch('/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -21,10 +21,9 @@ const Login = (props) => {
 
       if (response.ok) {
         const user = await response.json();
-        // Save the user data to local storage or Redux store
         
+        // Save the user data to local storage or Redux store
         props.setIsLoggedIn(true);
-
         setError('');
         navigate("/");
         setEmail('');
