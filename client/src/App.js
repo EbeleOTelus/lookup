@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from "./Components/Header/Header";
 import './App.css';
 import NavBar from './Components/NavBar/NavBar';
-import NavBar from './Components/NavBar/NavBar';
 import Trending from './Components/Trending/Trending';
 import Movies from './Components/Movies/Movies';
 import TvSeries from './Components/TvSeries/TvSeries';
@@ -20,22 +19,6 @@ export default function App() {
   const [email, setEmail] = useState('');
   return (
     <>
-      <BrowserRouter>
-        <Header isLoggedIn={isLoggedIn} />
-        <div className="App">
-          <Routes>
-            <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedIn} />} />
-            <Route path='/logout' element={<Logout setIsLoggedIn={setIsLoggedIn} />} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/' element={<Home />} exact />
-            <Route path='/trending' element={<Trending />} exact />
-            <Route path='/movies' element={<Movies />} exact />
-            <Route path='/tvseries' element={<TvSeries />} exact />
-            <Route path='/search' element={<Search />} exact />
-            <Route path='/leaving' element={<Leaving />} exact />
-          </Routes>
-        </div>
-        <NavBar />
       <BrowserRouter>
         <Header isLoggedIn={isLoggedIn} />
 
