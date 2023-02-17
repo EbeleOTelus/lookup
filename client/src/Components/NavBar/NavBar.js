@@ -2,12 +2,18 @@ import * as React from 'react';
 import "./NavBar.css"
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-// import HomeIcon from '@mui/icons-material/Home';
-// import WhatshotIcon from '@mui/icons-material/Whatshot';
-// import MovieIcon from '@mui/icons-material/Movie';
-// import TvIcon from '@mui/icons-material/Tv';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate, useLocation } from 'react-router-dom'; 
+
+
+const glasses = require('../images/nav_3dglasses.jpg');
+const camera = require('../images/nav_camera.jpg');
+const clapper = require('../images/nav_clapper.jpg');
+const speaker = require('../images/nav_loudspeaker.jpg');
+const chair = require('../images/nav_starchair.jpg');
+const tv = require('../images/nav_TV.jpg');
+
+
 
 
 export default function NavBar() {
