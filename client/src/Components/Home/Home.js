@@ -38,7 +38,7 @@ const Home = (props) => {
     }
     while (tempArr.length < imgs.length);
 
-    
+
 
 
     // Create a random non-repeating array from the downloaded images
@@ -48,16 +48,16 @@ const Home = (props) => {
       for (let i = 0; i < imgs.length; i++) {
         imgArr.push(`https://image.tmdb.org/t/p/w300${imgs[tempArr[i]].poster_path}`);
       }
-      
+
     }
   }
 
-  
+
   return (
-    
+
 
     <div class="home-component">
-      
+
       <div id="carouselExampleControls" className="carousel slide" data-ride="carousel" data-interval="3500">
         <div className="carousel-inner">
 
@@ -74,7 +74,7 @@ const Home = (props) => {
             <img className="d-block w-100" src="https://w0.peakpx.com/wallpaper/60/160/HD-wallpaper-up-balloons-cartoon-film-house-movie-wind.jpg" alt="Fourth slide" />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src="https://wallpapercave.com/wp/wp5920277.jpg"alt="Fourth slide" />
+            <img className="d-block w-100" src="https://wallpapercave.com/wp/wp5920277.jpg" alt="Fourth slide" />
           </div>
           <div className="carousel-item">
             <img className="d-block w-100" src="https://images.pexels.com/photos/15011528/pexels-photo-15011528.png" alt="Fourth slide" />
@@ -85,7 +85,7 @@ const Home = (props) => {
           <div className="carousel-item">
             <img className="d-block w-100" src="https://images.pexels.com/photos/13060861/pexels-photo-13060861.jpeg" alt="Fourth slide" />
           </div>
-      
+
         </div>
 
         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -99,8 +99,8 @@ const Home = (props) => {
       </div>
 
       <div className="PageTag"> Most Popular </div>
-      <Trending/>
-  
+      <Trending />
+
 
     </div>
 

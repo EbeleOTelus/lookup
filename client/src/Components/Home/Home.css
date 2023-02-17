@@ -1,6 +1,3 @@
-
-
-
 .home-component {
   display: flex;
   flex-direction: column;
@@ -15,14 +12,14 @@
 .PageTag {
   display: flex;
   justify-content: center;
- 
+
   z-index: 1;
   font-size: xx-large;
   font-weight: 800;
   margin-top: 0px;
   margin-bottom: 0px;
-  
-  
- 
+
+
+
 
 }

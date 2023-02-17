@@ -10,7 +10,7 @@ const Login = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     try {
       // Replace this with your authentication logic
       const response = await fetch('/auth/login', {
@@ -22,10 +22,9 @@ const Login = (props) => {
       if (response.ok) {
         const user = await response.json();
         // Save the user data to local storage or Redux store
-        // response.session.userId = user.id;
-        // console.log("user-----", user)
-        props.setIsLoggedIn(true)
-       
+        
+        props.setIsLoggedIn(true);
+
         setError('');
         navigate("/");
         setEmail('');
@@ -44,7 +43,7 @@ const Login = (props) => {
         <label htmlFor="email">Email:</label>
         <input
           type="text"
-          id="email"email
+          id="email" email
           placeholder="Enter Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}

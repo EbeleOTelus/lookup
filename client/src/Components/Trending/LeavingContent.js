@@ -1,6 +1,6 @@
 // import React from 'react';
 import { img_300, unavaliable } from "./../images/images.js";
-import "./LeavingContent.css";
+
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import React, { useRef, useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
@@ -36,11 +36,11 @@ const LeavingContent = ({
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  // console.log("##1", streamingInfo);
+
 
   const streamingInformation = () => {
     const objectKeys = Object.keys(streamingInfo);
-  
+
 
     const serviceInfo = {
       prime: prime,
@@ -55,7 +55,7 @@ const LeavingContent = ({
     };
 
     const links = objectKeys.map((key, index) => {
-     
+
 
       if (key in serviceInfo) {
         return <button type="button" class="btn btn-warning btn-lg  btn-large-custom btn3d" style={{ width: "150px", height: "80px" }} ><span class="glyphicon glyphicon-warning-sign"></span> <a key={index} href={streamingInfo[key].ca.link} target="_blank" rel="noopener noreferrer"><img src={serviceInfo[key]} alt="" class="streamer-logo" /></a></button>;
@@ -87,16 +87,16 @@ const LeavingContent = ({
         return <div> Not available in any streaming service</div>;
       }
     });
-   
+
     return genreArr;
   };
 
- 
 
- 
+
+
   return (
     <div>
-<div className="PageNameTagTv"> Leaving Soon! </div>
+      <div className="PageNameTagTv"> Leaving Soon! </div>
       <button type="button" class="btn btn-primary btn-lg btn3d" onClick={handleShow}><span class="glyphicon glyphicon-thumbs-up"></span>
 
         <div className="popular">
@@ -106,7 +106,7 @@ const LeavingContent = ({
             src={posterURLs} alt={title} />
           <p className="title">{title}</p>
           <span className="media_type" href={imdbLink}>
-          ⭐ Rating: {imdbRating/10}
+            ⭐ Rating: {imdbRating / 10}
             <span className="media_type">{year}</span>
           </span>
         </div>

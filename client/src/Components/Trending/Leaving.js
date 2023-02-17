@@ -13,7 +13,7 @@ import "./Trending.css";
 
 
 
-import React from 'react'
+import React from 'react';
 
 
 
@@ -69,13 +69,13 @@ const Leaving = () => {
 
 
 
-  axios.request(options).then(function (response) {
+  axios.request(options).then(function(response) {
 
-      console.log(response.data);
+    console.log(response.data);
 
-  }).catch(function (error) {
+  }).catch(function(error) {
 
-      console.error(error);
+    console.error(error);
 
   });
 
@@ -183,7 +183,7 @@ const Leaving = () => {
 
       )}
 
-       <div className="video-background"> 
+      <div className="video-background">
 
         <video autoPlay muted loop>
 
@@ -191,7 +191,7 @@ const Leaving = () => {
 
         </video>
 
-      </div> 
+      </div>
 
 
 
@@ -204,11 +204,11 @@ const Leaving = () => {
 
 
 
-  )
+  );
 
-}
-
-
+};
 
 
-export default Leaving
+
+
+export default Leaving;

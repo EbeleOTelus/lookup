@@ -7,20 +7,7 @@ export function Carousel() {
 
   const [data, setData] = useState([]);
 
-  // const {
-  //   carouselFragment,
-  //   slideToPrevItem,
-  //   slideToNextItem
-  // } = useSpringCarousel({
-  //   items: data.length < 1 ? [] : data.map((i) => ({
-  //     id: i.imdbID,
-  //     renderItem: (
-  //       <h2>
-  //         {i.title}
-  //       </h2>
-  //     ),
-  //   })),
-  // });
+
 
   // Get the trending move information from themoviedb API
   useEffect(() => {
@@ -44,38 +31,12 @@ export function Carousel() {
   console.log("Carousel data xxxxxxxxxxxxxxx", data);
 
 
-  // const getImagePaths = (data) => {
-  //   if (data.length > 0) {
-  //     console.log("Caroulel data", data);
-  //     const tempArray = [];
-  //     for (let i = 0; i < data.length; i++) {
 
-  //       const titleObj = data[i];
-
-  //       let image = `https://image.tmdb.org/t/p/w300${titleObj.backdrop_path}`;
-
-  //       const titleObjWithImage = { ...titleObj, image };
-  //       tempArray.push(titleObjWithImage);
-
-  //     }
-  //     console.log("Carousel tempArray ------======", tempArray);
-  //     return tempArray;
-
-  //   }
-  // };
-
-  // return (
-  //   <div>
-  //     <button onClick={slideToPrevItem}>Prev item</button>
-  //     {carouselFragment}
-  //     <button onClick={slideToNextItem}>Next item</button>
-  //   </div>
-  // );
 
 
   return (
 
-    
+
     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
       <div className="carousel-inner">
         {

@@ -1,5 +1,5 @@
-import React from 'react'
-import { createTheme, Pagination, ThemeProvider } from '@mui/material'
+import React from 'react';
+import { createTheme, Pagination, ThemeProvider } from '@mui/material';
 import { green, purple } from '@mui/material/colors';
 
 let theme = createTheme({
@@ -21,33 +21,33 @@ theme = createTheme(theme, {
   },
 });
 
- const Page = ({ setPage, numberOfPages = 10 }) => {
+const Page = ({ setPage, numberOfPages = 10 }) => {
 
   const handlePageChange = (page) => {
     setPage(page);
-    window.scroll(0, 0)
-  }
+    window.scroll(0, 0);
+  };
 
   return (
     <div
-    style={{
-      width: "100%",
-      display: "flex",
-      justifyContent: "center",
-      marginTop: 10,
-      position: "relative",
-      zIndex: 1,
-    }}
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        marginTop: 10,
+        position: "relative",
+        zIndex: 1,
+      }}
     >
       <ThemeProvider theme={theme}>
-      <Pagination sx={{button:{color: '#ffffff'}}} count={numberOfPages} onChange={(e) => handlePageChange(e.target.textContent)}
+        <Pagination sx={{ button: { color: '#ffffff' } }} count={numberOfPages} onChange={(e) => handlePageChange(e.target.textContent)}
 
-      color='secondary'
-      />
+          color='secondary'
+        />
 
       </ThemeProvider>
     </div>
-  )
-}
+  );
+};
 
 export default Page;

@@ -9,7 +9,6 @@ import Movies from './Components/Movies/Movies';
 import TvSeries from './Components/TvSeries/TvSeries';
 import Search from './Components/Search/Search';
 import Home from './Components/Home/Home';
-import SideBar from './Components/NavBar/SideBar';
 import Login from './Components/Login/login';
 import './Components/Login/login.css';
 import Logout from './Components/Logout/Logout';

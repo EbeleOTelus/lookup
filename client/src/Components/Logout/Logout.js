@@ -9,8 +9,8 @@ const Logout = () => {
   const handleLogout = () => {
     // Perform any necessary logout logic here, such as clearing local storage or making a API call
     localStorage.clear();
-     navigate("/login");
-    // setIsLoggedIn(false);
+    navigate("/login");
+
   };
 
 
@@ -19,7 +19,7 @@ const Logout = () => {
     <form>
 
     </form>
-  )
-}
+  );
+};
 
-export default Logout
+export default Logout;

@@ -22,7 +22,7 @@ const TvSeries = () => {
 
   let tvSeriesData = [];
 
-  // https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability
+
 
   const options = {
     method: 'GET',
@@ -50,7 +50,7 @@ const TvSeries = () => {
   useEffect(() => {
     const fetchTvSeries = () => {
       axios.request(options).then(function(response) {
-        
+
         setContent(response.data.results);
         setNumOfPages(response.data.total_pages);
       })
@@ -61,11 +61,11 @@ const TvSeries = () => {
     fetchTvSeries();
   }, [page]);
 
- 
+
 
   if (content.length > 0) {
 
-   
+
     tvSeriesData = content.map((c, id) => (
       <TvSeriesContent
         key={id}
@@ -108,8 +108,8 @@ const TvSeries = () => {
 
     </div>
 
-    
-    
+
+
 
   );
 
