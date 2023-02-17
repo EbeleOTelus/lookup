@@ -1,13 +1,10 @@
-
-
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Genres from "../Page/Genres";
 import Page from "../Page/Page";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
 import "./TvSeries.css";
 import "../TvSeriesContent/TvSeriesContent.css";
-
+const video = require('../video/Tv.mp4');
 
 
 const TvSeries = () => {
@@ -15,10 +12,6 @@ const TvSeries = () => {
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
   const [numberOfPages, setNumOfPages] = useState();
-  const [selectedGenres, setSelectedGenres] = useState([]);
-  const [genres, setGenres] = useState([]);
-
-  const video = require('../video/Tv.mp4');
 
   let tvSeriesData = [];
 
@@ -50,7 +43,6 @@ const TvSeries = () => {
   useEffect(() => {
     const fetchTvSeries = () => {
       axios.request(options).then(function(response) {
-        
         setContent(response.data.results);
         setNumOfPages(response.data.total_pages);
       })
@@ -61,11 +53,7 @@ const TvSeries = () => {
     fetchTvSeries();
   }, [page]);
 
- 
-
   if (content.length > 0) {
-
-   
     tvSeriesData = content.map((c, id) => (
       <TvSeriesContent
         key={id}
@@ -86,33 +74,21 @@ const TvSeries = () => {
   }
 
   return (
-
     <div>
       <div className="PageNameTagTv"> Tv Shows </div>
-
       <div className="title-css">
         {tvSeriesData}
-
       </div>
-
       {numberOfPages > 1 && (
-
         <Page setPage={setPage} numberOfPages={numberOfPages} style={{ color: "blue" }} />
-
       )}
       <div className="video-background">
         <video autoPlay muted loop>
           <source src={video} type="video/mp4" />
         </video>
       </div>
-
     </div>
-
-    
-    
-
   );
-
 };
 
 export default TvSeries;

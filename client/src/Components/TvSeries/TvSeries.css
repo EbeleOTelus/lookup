@@ -1,4 +1,4 @@
-.title-css{
+.title-css {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -6,11 +6,11 @@
   margin-top: 50px;
   margin-left: 40px;
   margin-right: 40px;
-  
+
 }
 
 .PageNameTagTv {
-  position:relative;
+  position: relative;
   z-index: 1;
   font-size: xx-large;
   font-weight: 800;

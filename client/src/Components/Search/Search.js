@@ -4,9 +4,7 @@ import Signup from '../Signup/Signup';
 import "./Search.css";
 import axios from "axios";
 import TvSeriesContent from "../TvSeriesContent/TvSeriesContent";
-// import Button from '../Button/Button';
 import Radio from '@mui/material/Radio';
-// const walle = '../images/movie-wall-e.jpg';
 
 //radio buttons
 import RadioGroup from '@mui/material/RadioGroup';
@@ -17,34 +15,21 @@ import FormLabel from '@mui/material/FormLabel';
 
 
 import IconButton from "@mui/material/IconButton";
-// import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
-
-import { alpha, styled } from '@mui/material/styles';
-
-
 
 //search text field
 const Search = () => {
-
   const [keyword, setKeyword] = useState('');
   const [content, setContent] = useState([]);
-   
   const [type, setType] = useState("movie");
-
-
   const [value, setValue] = React.useState('');
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState('Choose wisely');
 
-
   let tvSeriesData = [];
-
-  
 
   const fetchSearchData = () => {
 
-    console.log("Search type-------------", type);
     const options = {
       method: 'GET',
       url: 'https://streaming-availability.p.rapidapi.com/search/ultra',
@@ -76,15 +61,11 @@ const Search = () => {
       .then(function(response) {
         console.log("response.data.results", response.data.results);
         setContent(response.data.results);
-        console.log("content======", content);
-
       })
       .catch(function(error) {
         console.error(error);
       });
-
   };
-
 
   const onChangeHandler = (e) => { setKeyword(e.target.value); };
 
@@ -98,17 +79,13 @@ const Search = () => {
     }
   };
 
-
   function refreshPage() {
     setContent([]);
     setKeyword('');
   }
 
-
   if (content.length > 0) {
-
     tvSeriesData = content.map((c, id) => (
-
       <TvSeriesContent
         key={id}
         age={c.age}
@@ -127,9 +104,6 @@ const Search = () => {
     ));
   }
 
-
-  
-
   const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     setType(event.target.value);
@@ -137,17 +111,11 @@ const Search = () => {
     setError(false);
   };
 
-
-  
-  
-
   return (
     <div className="Search">
-
       <form className='search-form' >
 
         {/* NEW TEXT field */}
-
         <div>
           <TextField
             id="search-bar"
@@ -159,15 +127,11 @@ const Search = () => {
             placeholder="Search..."
             size="medium"
           />
-
         </div>
-
-
 
         <div className="radio-div">
 
           {/* Radio buttons= */}
-
           <FormControl sx={{ m: 3 }} error={error} variant="standard" className="search-radio">
             <FormLabel id="demo-error-radios"></FormLabel>
             <RadioGroup
@@ -179,30 +143,21 @@ const Search = () => {
               <FormControlLabel value="movie" control={<Radio />} label="Movie" />
               <FormControlLabel value="series" control={<Radio />} label="TV show" />
             </RadioGroup>
-
           </FormControl>
-
         </div>
 
 
         <div className="search-buttons">
-
           <button type="button" class="btn btn-outline-primary search-button" data-bs-toggle="button" autoComplete="off" onClick={submitHandler}>Search</button>
-
           <button type="button" class="btn btn-outline-primary reset-button" data-bs-toggle="button" autoComplete="off" onClick={refreshPage}>Reset</button>
-
         </div>
-
       </form>
 
       <div className="title-css">
         {tvSeriesData}
-
       </div>
 
       <img className="d-block w-100" src={"https://images.hdqwalls.com/download/movie-wall-e-ad-3840x2160.jpg"} alt="" />
-
-
     </div>
   );
 };

@@ -9,25 +9,12 @@
   z-index: 1;
   background-color: rgb(128, 132, 247);
   background-image: "https://images.hdqwalls.com/download/movie-wall-e-ad-3840x2160.jpg";
-  /* linear-gradient(rgb(238, 117, 117), rgb(232, 232, 163)); */
   width: 100%;
-
-
 }
-
-/* .search-form {
-  border: 2em;
-  border-color: rgb(255, 0, 195);
-} */
 
 .search-buttons {
   display: flex;
   justify-content: center;
- 
-  /* height: 50px;
-  width: 180px;
-  font-size: 26px;
-  margin: 10px; */
 }
 
 .search-button {
@@ -42,18 +29,7 @@
   width: 180px;
   font-size: 26px;
   margin: 10px;
-  /* color: #1c1020 */
-  
 }
-
-/* 
-.search-input {
-  height: 50px;
-} */
-
-/* .MuiInputBase-root {
-  color: white;
-} */
 
 #search-bar {
   display: flex;
@@ -66,18 +42,12 @@
   color: white;
 }
 
-
 .radio-div {
   display: flex;
   flex-direction:row;
   justify-content: center;
   align-items: center;
-
 }
-
-/* .css-1m9pwf3 {
-  color: #007bff
-} */
 
 .search-radio {
   display: flex;
@@ -85,7 +55,3 @@
   justify-content: center;
   align-items: center;
 }
-/* 
-.search-button {
-  margin: 10;
-} */
