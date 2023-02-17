@@ -11,7 +11,11 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 ## Screen Shots
-!["4 PANEL VIEW"](https://github.com/Aminadft/scheduler-dashboard/blob/master/public/docs/dashboard.PNG?raw=true)
+!["Home Page"](https://github.com/EbeleOTelus/lookup/blob/main/client/src/Components/images/home.jpg)
+!["Tv Shows"](https://github.com/EbeleOTelus/lookup/blob/main/client/src/Components/images/tvshows.png)
+!["Model"](https://github.com/EbeleOTelus/lookup/blob/main/client/src/Components/images/model.png)
+!["Search full page"](https://github.com/EbeleOTelus/lookup/blob/main/client/src/Components/images/Search%20main%20full%20page.PNG)
+!["Search field"](https://github.com/EbeleOTelus/lookup/blob/main/client/src/Components/images/search.jpg)
 
 ## Dependencies
 - React
