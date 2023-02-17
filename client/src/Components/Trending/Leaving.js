@@ -13,7 +13,7 @@ import "./Trending.css";
 
 
 
-import React from 'react'
+import React from 'react';
 
 
 
@@ -69,13 +69,13 @@ const Leaving = () => {
 
 
 
-  axios.request(options).then(function (response) {
+  axios.request(options).then(function(response) {
 
-      console.log(response.data);
+    console.log(response.data);
 
-  }).catch(function (error) {
+  }).catch(function(error) {
 
-      console.error(error);
+    console.error(error);
 
   });
 
@@ -114,101 +114,42 @@ const Leaving = () => {
   }, [page]);
 
 
-
-
-
-
-
   if (content.length > 0) {
 
-
-
-
-
-
-
     leavingData = content.map((c, id) => (
-
       <LeavingContent
-
         key={id}
-
         age={c.age}
-
         cast={c.cast}
-
         countries={c.countries}
-
         genres={c.genres}
-
         imdbID={c.imdbID}
-
         overview={c.overview}
-
         posterURLs={c.posterURLs[342]}
-
         streamingInfo={c.streamingInfo}
-
         title={c.title}
-
         year={c.year}
-
         video={c.video}
-
         imdbRating={c.imdbRating}
-
         imdbLink={`https://www.imdb.com/title/${c.imdbID}`} />
-
     ));
-
   }
 
-
-
-
-
   return (
-
     <div>
-
       <div className="title-css">
-
         {leavingData}
-
       </div>
-
       {numberOfPages > 1 && (
-
         <Page setPage={setPage} numberOfPages={numberOfPages} style={{ color: "blue" }} />
-
       )}
-
-       <div className="video-background"> 
-
+      <div className="video-background">
         <video autoPlay muted loop>
-
           <source src={video} type="video/mp4" />
-
         </video>
-
-      </div> 
-
-
-
-
+      </div>
     </div>
+  );
+};
 
-
-
-
-
-
-
-  )
-
-}
-
-
-
-
-export default Leaving
+export default Leaving;

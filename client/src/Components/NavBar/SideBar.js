@@ -6,11 +6,11 @@ import TvIcon from '@mui/icons-material/Tv';
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from "react-router-dom";
-import "./SideBar.css"
+import "./SideBar.css";
 
 const SideBar = ({ children }) => {
-  const[isOpen, setIsOpen] = React.useState(false);
-  const toggle = () => setIsOpen (!isOpen)
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggle = () => setIsOpen(!isOpen);
 
   const navitems = [
     {
@@ -48,7 +48,7 @@ const SideBar = ({ children }) => {
     <div className="container">
       <div className="sidebar">
         <div className="bars">
-          <MenuIcon  onClick={toggle}/>
+          <MenuIcon onClick={toggle} />
         </div>
         {
           navitems.map((item, index) => (

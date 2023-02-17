@@ -16,23 +16,15 @@
 .title-css {
   position: relative;
   z-index: 1;
-  margin-top: 0px!important;
-  
-
+  margin-top: 0px !important;
 }
+
 .PageNameTag {
-  
-  position:relative;
+  position: relative;
   z-index: 1;
   font-size: xx-large;
   font-weight: 800;
   height: 50px;
   margin-top: 5px;
   margin-bottom: 8px;
-
- 
-  
- }
- 
-
- 
+}

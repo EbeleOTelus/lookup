@@ -1,4 +1,4 @@
-.trending{
+.trending {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -6,38 +6,34 @@
   margin-top: 50px;
   margin-left: 40px;
   margin-right: 40px;
-  
 }
-.trendingStyle{
+
+.trendingStyle {
   display: flex;
   flex-direction: column;
   width: 250px;
-
   padding: 5px;
   margin: 5px 0;
-  background-color:#28498a;
+  background-color: #28498a;
   border-radius: 10px;
-  position:relative;
+  position: relative;
   font-family: Montserrat, sans-serif;
-
 }
 
 .trendingStyle:hover {
-  background-color:#462850;
+  background-color: #462850;
   color: #FFF7D6;
   opacity: 0.7;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 780px) {
   .trendingStyle {
     width: 50%;
   }
 }
 
 .poster {
-  
   border-radius: 10px;
- 
 }
 
 .title {
@@ -51,7 +47,5 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 5px;
-padding: 5 2px;
-
-
+  padding: 5 2px;
 }

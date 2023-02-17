@@ -15,15 +15,12 @@ const Genres = (
       .then((response) => {
         console.log(response.genres);
       })
-      .catch((error) =>{
+      .catch((error) => {
         console.log(error);
-      })
-  
+      });
   };
   useEffect(() => {
     fetchGenres();
-
-
   }
   );
 
