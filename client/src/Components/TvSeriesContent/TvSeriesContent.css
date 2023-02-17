@@ -2,12 +2,8 @@
   display: flex;
   flex-direction: column;
   width: 250px;
-
   padding: 5px;
-  /* margin-top: 15px;
-  margin-bottom: 15px; */
-
-  background-color:#28498a;
+  background-color: #28498a;
   border-radius: 10px;
   position: relative;
   font-family: Montserrat, sans-serif;
@@ -17,22 +13,14 @@
 
 .popular:hover {
   opacity: 0.7;
-  background-color:#462850;
-}
-
-@media (max-width: 550px) {
-  .popular {
-    width: 50%;
-  }
+  background-color: #462850;
 }
 
 #title-button:hover {
-  
-  background-color:#462850;
+  background-color: #462850;
 }
 
 .poster {
-
   border-radius: 10px;
   word-wrap: break-word;
 }
@@ -45,7 +33,7 @@
   padding: 8px 0;
   word-wrap: break-word;
   overflow: hidden;
-  text-overflow:inherit;
+  text-overflow: inherit;
   white-space: pre-wrap;
 }
 
@@ -61,7 +49,6 @@
   background: #dde1e7;
   border-radius: 20px;
   margin: 20px;
-
 }
 
 .modal-top {
@@ -79,9 +66,6 @@
   padding-right: 10px;
 }
 
-
-
-
 .modal-footer {
   display: flex;
   flex-direction: row;
@@ -92,13 +76,11 @@
   margin: 20px;
 }
 
-
-
 .modalTitle {
   display: flex;
   align-items: center;
   font-size: 30px;
-  font-weight:700;
+  font-weight: 700;
   text-align: start;
   margin-right: 10px;
 }
@@ -109,7 +91,6 @@
   justify-content: flex-start;
   align-items: flex-start;
   font-size: 20px;
-
   box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45), inset 5px 5px 9px rgba(94, 104, 121, 0.3);
   background: #dde1e7;
   border-radius: 20px;
@@ -131,8 +112,6 @@
   height: 315px;
 }
 
-
-
 .modal-header {
   display: flex;
   font-weight: 600;
@@ -148,8 +127,6 @@
   align-items: flex-start;
   text-align: left;
 }
-
-
 
 .overview {
   padding: 20px;
@@ -169,7 +146,6 @@
   min-height: 100px;
 }
 
-
 .genre-modal {
   display: flex;
   flex-direction: row;
@@ -186,25 +162,20 @@
 }
 
 
-
-
-
-
-@media (min-width: 992px){
-.modal-lg {
-  width: 900px;
-  max-width: 1024px;
-}
+@media (max-width: 780px) {
+  .popular {
+    width: 50%;
+  }
 }
 
-
-
-
-
-
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 900px;
+    max-width: 1024px;
+  }
+}
 
 /* Button */
-
 
 .btn3d {
   position: relative;
@@ -229,10 +200,6 @@
   top: 2px;
 }
 
-
-
-
-
 .btn3d.btn-primary {
   background-color: #3159a9;
   border-radius: 5%;
@@ -244,9 +211,6 @@
   background-color: #4274D7;
   padding: 2px;
 }
-
-
-
 
 .btn3d.btn-warning {
   box-shadow: 0 0 0 1px #496673 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #496653, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
@@ -281,7 +245,6 @@
   box-shadow: 0 0 0 1px #9a00cd inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
   background-color: #bb39d7;
 }
-
 
 .button-streamer {
   background-color: #9a00cd;
