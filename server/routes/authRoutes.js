@@ -14,19 +14,9 @@ module.exports = function(router, database) {
         res.send(e);
       });
   });
-  // router.post('/login', (req, res) => {
-  //   console.log(req.body)
+ 
 
-  //   database.signIn(req.body.email, req.body.password )
-  //     .then(authres => res.send({ authres }))
-  //     .catch(e => {
-  //       console.error(e);
-  //       res.send(e);
-  //     });
-  //   });
-  // return router;
 
-   
   const login = function(email, password) {
 
     
@@ -43,7 +33,7 @@ module.exports = function(router, database) {
   
   router.post('/login', (req, res) => {
     const user = req.body;
-    // const { email, password } = req.body;
+    
     login(user.email, user.password)
       .then(authres => {
         console.log("req.body--------------", req.body);
@@ -52,7 +42,7 @@ module.exports = function(router, database) {
           return;
         }
         console.log("authres---", authres)
-        // req.session.userId = authres.id;
+        
         res.send({ user: { email: authres.email, id: authres.id } });
 
       })
@@ -64,7 +54,7 @@ module.exports = function(router, database) {
   });
 
   router.post('/logout', (req, res) => {
-    // req.session.userId = null;
+    
     res.send({});
   })
 };
